@@ -1,8 +1,18 @@
 # Portfolio
 
-A static, responsive software engineering portfolio. The visual direction
-combines a playful near-future interface with developer-terminal details while
-keeping the content easy for recruiters and clients to scan.
+**Live site:** [muaz-shafiq-portfolio.vercel.app](https://muaz-shafiq-portfolio.vercel.app/)
+
+A static, responsive software engineering portfolio combining a playful
+near-future interface with developer-terminal details. It presents selected
+products, professional experience, technical capabilities, and a few personal
+Easter eggs without getting in the way of recruiters and clients.
+
+## Featured work
+
+- **Faask:** Swipe-first fashion discovery with taste learning and semantic search
+- **Koro.ai:** Voice-first adaptive AI tutoring
+- **FocusFlow:** Constraint-aware planning across web and mobile
+- **SubscriptionFlow:** Public-safe highlights from production subscription software
 
 ## Stack
 
@@ -27,10 +37,12 @@ npm run lint
 npm run build
 ```
 
-## Free deployment
+## Deployment
 
-The production site is deployed on Vercel's Hobby tier and connected to this
-repository for automatic deployments from `main`.
+The production site is available at
+[muaz-shafiq-portfolio.vercel.app](https://muaz-shafiq-portfolio.vercel.app/).
+It runs on Vercel's Hobby tier and is connected to this repository for automatic
+deployments from `main`.
 
 To publish local updates:
 
