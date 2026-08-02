@@ -17,11 +17,13 @@ import {
   GitBranch,
   Goal,
   GraduationCap,
+  Heart,
   Layers3,
   ContactRound,
   Mail,
   MapPin,
   Mic2,
+  Shirt,
   Sparkles,
   TerminalSquare,
   X,
@@ -156,6 +158,38 @@ function LahoreTime() {
   }, []);
 
   return <time suppressHydrationWarning>{time} PKT</time>;
+}
+
+function MiniFaask() {
+  return (
+    <div className="mini-ui faask-ui" aria-hidden="true">
+      <div className="faask-topbar">
+        <strong>faask<span>.</span></strong>
+        <small>92% MATCH</small>
+      </div>
+      <div className="faask-deck">
+        <i className="faask-card-shadow shadow-two" />
+        <i className="faask-card-shadow shadow-one" />
+        <div className="faask-product-card">
+          <div className="faask-garment">
+            <span>FAASK</span>
+            <Shirt size={78} strokeWidth={1.2} />
+          </div>
+          <div className="faask-product-copy">
+            <small>COMMON ROOM</small>
+            <strong>Sage Campus Shirt</strong>
+            <b>PKR 3,850</b>
+            <em><Sparkles size={10} /> Matches your campus style</em>
+          </div>
+        </div>
+      </div>
+      <div className="faask-swipe-actions">
+        <span><X size={16} /></span>
+        <span className="faask-heart"><Heart size={18} fill="currentColor" /></span>
+        <span><Sparkles size={15} /></span>
+      </div>
+    </div>
+  );
 }
 
 function MiniKoro() {
@@ -422,10 +456,37 @@ function App() {
             </div>
           </Reveal>
 
+          <Reveal className="project-card project-faask">
+            <div className="project-copy">
+              <div className="project-meta"><span>2026 — NOW</span><span>FASHION / AI</span></div>
+              <div className="project-number">01</div>
+              <div>
+                <div className="project-title-line"><span className="project-icon faask-icon"><Heart size={20} /></span><h3>Faask</h3></div>
+                <p className="project-lede">A swipe-first fashion discovery app that learns personal taste and turns it into sharper recommendations.</p>
+                <ul className="project-highlights">
+                  <li><Check size={14} /> Taste onboarding and swipe-based recommendation learning</li>
+                  <li><Check size={14} /> Semantic search with exact article and style filters</li>
+                  <li><Check size={14} /> Cross-device sync with a resilient local fallback</li>
+                </ul>
+                <div className="tag-list"><span>React</span><span>TypeScript</span><span>Supabase</span><span>Embeddings</span></div>
+                <div className="project-actions">
+                  <a className="text-link live-link" href="https://faask.vercel.app/" target="_blank" rel="noreferrer">Open live app <ArrowUpRight size={16} /></a>
+                  <a className="text-link" href="https://github.com/MuazShafiq/faask" target="_blank" rel="noreferrer">Source code <GitBranch size={15} /></a>
+                </div>
+              </div>
+            </div>
+            <div className="project-visual faask-visual">
+              <div className="visual-label faask-label"><i /> TASTE MODEL ACTIVE</div>
+              <MiniFaask />
+              <div className="floating-chip chip-top"><Sparkles size={13} /> Learns your taste</div>
+              <div className="floating-chip chip-bottom"><Heart size={13} /> Swipe-first</div>
+            </div>
+          </Reveal>
+
           <Reveal className="project-card project-koro">
             <div className="project-copy">
               <div className="project-meta"><span>2025 — NOW</span><span>AI / EDTECH</span></div>
-              <div className="project-number">01</div>
+              <div className="project-number">02</div>
               <div>
                 <div className="project-title-line"><span className="project-icon koro-icon"><Mic2 size={20} /></span><h3>Koro.ai</h3></div>
                 <p className="project-lede">A voice-first AI tutor that turns learning material into adaptive, conversational lessons.</p>
@@ -435,7 +496,10 @@ function App() {
                   <li><Check size={14} /> Local and hosted AI paths with graceful fallback</li>
                 </ul>
                 <div className="tag-list"><span>Next.js</span><span>TypeScript</span><span>Supabase</span><span>AI</span></div>
-                <a className="text-link" href="https://github.com/MuazShafiq/koro.ai" target="_blank" rel="noreferrer">View repository <ArrowUpRight size={16} /></a>
+                <div className="project-actions">
+                  <a className="text-link live-link" href="https://koro-ai-lime.vercel.app/" target="_blank" rel="noreferrer">Open live app <ArrowUpRight size={16} /></a>
+                  <a className="text-link" href="https://github.com/MuazShafiq/koro.ai" target="_blank" rel="noreferrer">Source code <GitBranch size={15} /></a>
+                </div>
               </div>
             </div>
             <div className="project-visual koro-visual">
@@ -449,7 +513,7 @@ function App() {
           <Reveal className="project-card project-focus">
             <div className="project-copy">
               <div className="project-meta"><span>2024 — NOW</span><span>PRODUCTIVITY / ML</span></div>
-              <div className="project-number">02</div>
+              <div className="project-number">03</div>
               <div>
                 <div className="project-title-line"><span className="project-icon focus-icon"><CalendarRange size={20} /></span><h3>FocusFlow</h3></div>
                 <p className="project-lede">An adaptive planner that balances deadlines, energy, fixed commitments, and life.</p>
@@ -459,7 +523,10 @@ function App() {
                   <li><Check size={14} /> ML learns when each user works best</li>
                 </ul>
                 <div className="tag-list"><span>React</span><span>React Native</span><span>Node.js</span><span>Python</span></div>
-                <a className="text-link" href="https://github.com/MuazShafiq/focusflow-app" target="_blank" rel="noreferrer">View repository <ArrowUpRight size={16} /></a>
+                <div className="project-actions">
+                  <a className="text-link live-link" href="https://focusflow-web-azure.vercel.app/" target="_blank" rel="noreferrer">Open live app <ArrowUpRight size={16} /></a>
+                  <a className="text-link" href="https://github.com/MuazShafiq/focusflow-app" target="_blank" rel="noreferrer">Source code <GitBranch size={15} /></a>
+                </div>
               </div>
             </div>
             <div className="project-visual focus-visual">
@@ -473,7 +540,7 @@ function App() {
           <Reveal className="project-card project-subscription">
             <div className="project-copy">
               <div className="project-meta"><span>2024 — NOW</span><span>PROFESSIONAL WORK</span></div>
-              <div className="project-number">03</div>
+              <div className="project-number">04</div>
               <div>
                 <div className="project-title-line"><span className="project-icon sf-icon"><BriefcaseBusiness size={20} /></span><h3>SubscriptionFlow</h3></div>
                 <p className="project-lede">End-to-end product engineering for a YC-backed subscription management platform.</p>
@@ -483,7 +550,9 @@ function App() {
                   <li><Check size={14} /> Reliability across cloud services and environments</li>
                 </ul>
                 <div className="tag-list"><span>React</span><span>Vue</span><span>Laravel</span><span>AWS</span></div>
-                <a className="text-link" href="https://www.subscriptionflow.com/" target="_blank" rel="noreferrer">Visit company <ArrowUpRight size={16} /></a>
+                <div className="project-actions">
+                  <a className="text-link live-link" href="https://www.subscriptionflow.com/" target="_blank" rel="noreferrer">Visit company <ArrowUpRight size={16} /></a>
+                </div>
               </div>
             </div>
             <div className="project-visual subscription-visual">
