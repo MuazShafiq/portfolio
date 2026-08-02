@@ -1,8 +1,8 @@
-# Muaz Shafiq — Portfolio
+# Portfolio
 
-A static, responsive portfolio for Muaz Shafiq. The visual direction combines a
-playful near-future interface with developer-terminal details while keeping the
-content easy for recruiters and clients to scan.
+A static, responsive software engineering portfolio. The visual direction
+combines a playful near-future interface with developer-terminal details while
+keeping the content easy for recruiters and clients to scan.
 
 ## Stack
 
@@ -29,8 +29,8 @@ npm run build
 
 ## Free deployment
 
-The production site is deployed on Vercel's Hobby tier at
-[`muaz-shafiq-portfolio.vercel.app`](https://muaz-shafiq-portfolio.vercel.app).
+The production site is deployed on Vercel's Hobby tier and connected to this
+repository for automatic deployments from `main`.
 
 To publish local updates:
 
