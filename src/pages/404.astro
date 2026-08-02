@@ -1,0 +1,75 @@
+---
+import "@fontsource-variable/manrope";
+import "@fontsource/dm-mono/400.css";
+import "../styles.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0b0d" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>404 · Muaz Shafiq</title>
+  </head>
+  <body>
+    <main class="not-found">
+      <p><span>$</span> locate requested_page</p>
+      <h1>404</h1>
+      <h2>This route took an<br /><em>unplanned side quest.</em></h2>
+      <p class="not-found-copy">Nothing useful lives here yet. The homepage is significantly better behaved.</p>
+      <div>
+        <a class="button primary" href="/">Return home</a>
+        <a class="button secondary" href="mailto:muaz.shafiq18@gmail.com">Report a suspicious route</a>
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+  .not-found {
+    display: grid;
+    width: min(760px, calc(100% - 40px));
+    min-height: 100vh;
+    margin: 0 auto;
+    align-content: center;
+    padding: 80px 0;
+  }
+
+  .not-found > p:first-child {
+    color: #aaa9a6;
+    font-family: var(--mono);
+    font-size: 11px;
+  }
+
+  .not-found > p:first-child span { color: var(--purple); }
+
+  .not-found h1 {
+    margin: 22px 0 -34px;
+    color: #f2f0eb0b;
+    font-size: clamp(150px, 34vw, 310px);
+    line-height: .8;
+    letter-spacing: -.1em;
+  }
+
+  .not-found h2 {
+    position: relative;
+    margin: 0;
+    font-size: clamp(42px, 8vw, 76px);
+    line-height: .98;
+    letter-spacing: -.07em;
+  }
+
+  .not-found h2 em { color: var(--purple); font-style: normal; }
+
+  .not-found-copy {
+    max-width: 500px;
+    margin: 30px 0;
+    color: #aaa9a6;
+    line-height: 1.8;
+  }
+
+  .not-found > div { display: flex; flex-wrap: wrap; gap: 10px; }
+</style>
