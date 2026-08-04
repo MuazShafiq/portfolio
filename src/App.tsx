@@ -204,7 +204,7 @@ function MiniKoro() {
       <div className="koro-main">
         <div className="mini-topbar">
           <span>Physics / Kinematics</span>
-          <b>LOCAL AI</b>
+          <b>AI TUTOR</b>
         </div>
         <div className="lesson-orb"><Mic2 size={27} /></div>
         <p>How does velocity change over time?</p>
@@ -250,17 +250,51 @@ function MiniFocusFlow() {
   );
 }
 
-function SubscriptionConsole() {
+function MiniSubscriptionFlow() {
+  const navigation = ["Overview", "Subscriptions", "Invoices", "Payments"];
+
   return (
-    <div className="subscription-console" aria-label="A visual summary of SubscriptionFlow work">
-      <div className="console-bar"><span /><span /><span /><em>shipping.log</em></div>
-      <div className="console-content">
-        <p><i>01</i><span className="purple">product</span>.ship(<b>"end-to-end features"</b>)</p>
-        <p><i>02</i><span className="blue">payments</span>.recover(<b>"failed retries"</b>)</p>
-        <p><i>03</i><span className="silver">integrations</span>.sync(<b>"Monday.com"</b>)</p>
-        <p><i>04</i><span className="orange">email</span>.improve(<b>"deliverability"</b>)</p>
-        <p><i>05</i><span className="pink">analytics</span>.ask(<b>"Vanna.ai"</b>)</p>
-        <p className="console-result"><i>✓</i> production value delivered<span className="cursor" /></p>
+    <div className="mini-ui sf-dashboard" aria-label="A public-safe recreation of the current SubscriptionFlow Next.js dashboard">
+      <aside className="sf-preview-sidebar">
+        <div className="sf-preview-brand"><span>SF</span><b>SubscriptionFlow</b></div>
+        <nav>
+          {navigation.map((item, index) => (
+            <span key={item} className={index === 0 ? "active" : ""}>
+              <i />{item}
+            </span>
+          ))}
+        </nav>
+        <div className="sf-preview-user"><i /><span><b>Muaz</b><small>Engineering</small></span></div>
+      </aside>
+      <div className="sf-preview-main">
+        <header>
+          <div><b>Modern View</b><small>Subscription overview</small></div>
+          <span>USD</span>
+        </header>
+        <div className="sf-preview-section-title"><i /> RECURRING REVENUE</div>
+        <div className="sf-metric-grid">
+          <article>
+            <span>MONTHLY RECURRING REVENUE</span>
+            <strong>$••,•••</strong>
+            <svg viewBox="0 0 120 34" role="presentation"><path d="M2 28 C18 25, 20 17, 35 20 S55 8, 68 13 S90 5, 118 3" /></svg>
+          </article>
+          <article>
+            <span>ANNUAL RECURRING REVENUE</span>
+            <strong>$•••,•••</strong>
+            <svg viewBox="0 0 120 34" role="presentation"><path d="M2 29 C15 23, 27 27, 39 17 S60 20, 72 11 S96 10, 118 2" /></svg>
+          </article>
+        </div>
+        <div className="sf-preview-section-title"><i /> STATUS OVERVIEW</div>
+        <div className="sf-status-grid">
+          <article>
+            <div className="sf-donut subscriptions"><span>•••<small>TOTAL</small></span></div>
+            <div className="sf-status-copy"><b>Subscriptions</b><span><i /> Active</span><span><i /> Trial</span><span><i /> Paused</span></div>
+          </article>
+          <article>
+            <div className="sf-donut invoices"><span>•••<small>TOTAL</small></span></div>
+            <div className="sf-status-copy"><b>Invoices</b><span><i /> Paid</span><span><i /> Due</span><span><i /> Draft</span></div>
+          </article>
+        </div>
       </div>
     </div>
   );
@@ -431,7 +465,6 @@ function App() {
                 decoding="async"
                 fetchPriority="high"
               />
-              <span className="portrait-caption">ORIGINAL PHOTO</span>
               <div className="scan-corner bottom-left" /><div className="scan-corner bottom-right" />
             </div>
             <div className="console-status">
@@ -466,7 +499,7 @@ function App() {
                 <ul className="project-highlights">
                   <li><Check size={14} /> Taste onboarding and swipe-based recommendation learning</li>
                   <li><Check size={14} /> Semantic search with exact article and style filters</li>
-                  <li><Check size={14} /> Cross-device sync with a resilient local fallback</li>
+                  <li><Check size={14} /> Cross-device taste profiles and recommendation history</li>
                 </ul>
                 <div className="tag-list"><span>React</span><span>TypeScript</span><span>Supabase</span><span>Embeddings</span></div>
                 <div className="project-actions">
@@ -489,11 +522,11 @@ function App() {
               <div className="project-number">02</div>
               <div>
                 <div className="project-title-line"><span className="project-icon koro-icon"><Mic2 size={20} /></span><h3>Koro.ai</h3></div>
-                <p className="project-lede">A voice-first AI tutor that turns learning material into adaptive, conversational lessons.</p>
+                <p className="project-lede">A production-ready, voice-first AI tutor with adaptive lessons, persistent learning data, and managed educational resources.</p>
                 <ul className="project-highlights">
-                  <li><Check size={14} /> Voice-enabled tutoring and interactive blackboard</li>
-                  <li><Check size={14} /> Adaptive lessons, assessments, and progress tracking</li>
-                  <li><Check size={14} /> Local and hosted AI paths with graceful fallback</li>
+                  <li><Check size={14} /> Supabase-backed accounts, preferences, analytics, and progress</li>
+                  <li><Check size={14} /> Admin-managed subject catalogue with PDF resource ingestion</li>
+                  <li><Check size={14} /> Voice, chat, blackboard, and offline lesson review packs</li>
                 </ul>
                 <div className="tag-list"><span>Next.js</span><span>TypeScript</span><span>Supabase</span><span>AI</span></div>
                 <div className="project-actions">
@@ -516,13 +549,13 @@ function App() {
               <div className="project-number">03</div>
               <div>
                 <div className="project-title-line"><span className="project-icon focus-icon"><CalendarRange size={20} /></span><h3>FocusFlow</h3></div>
-                <p className="project-lede">An adaptive planner that balances deadlines, energy, fixed commitments, and life.</p>
+                <p className="project-lede">An offline-capable adaptive planner that balances deadlines, energy, fixed commitments, and life—then syncs safely when connectivity returns.</p>
                 <ul className="project-highlights">
-                  <li><Check size={14} /> Synchronized web and mobile experiences</li>
-                  <li><Check size={14} /> Constraint-aware schedule generation</li>
-                  <li><Check size={14} /> ML learns when each user works best</li>
+                  <li><Check size={14} /> Workbox PWA with IndexedDB-cached plans and tasks</li>
+                  <li><Check size={14} /> Durable optimistic queue with reconnect synchronization</li>
+                  <li><Check size={14} /> Idempotent writes, conflict handling, and local scheduling fallback</li>
                 </ul>
-                <div className="tag-list"><span>React</span><span>React Native</span><span>Node.js</span><span>Python</span></div>
+                <div className="tag-list"><span>React</span><span>Workbox</span><span>IndexedDB</span><span>MongoDB</span></div>
                 <div className="project-actions">
                   <a className="text-link live-link" href="https://focusflow-web-azure.vercel.app/" target="_blank" rel="noreferrer">Open live app <ArrowUpRight size={16} /></a>
                   <a className="text-link" href="https://github.com/MuazShafiq/focusflow-app" target="_blank" rel="noreferrer">Source code <GitBranch size={15} /></a>
@@ -532,8 +565,8 @@ function App() {
             <div className="project-visual focus-visual">
               <div className="visual-label"><i /> WEEK OPTIMIZED</div>
               <MiniFocusFlow />
-              <div className="floating-chip chip-top"><Sparkles size={13} /> Auto-balance</div>
-              <div className="floating-chip chip-bottom"><CalendarRange size={13} /> Web + mobile</div>
+              <div className="floating-chip chip-top"><Sparkles size={13} /> Offline-ready</div>
+              <div className="floating-chip chip-bottom"><CalendarRange size={13} /> Sync on reconnect</div>
             </div>
           </Reveal>
 
@@ -543,13 +576,13 @@ function App() {
               <div className="project-number">04</div>
               <div>
                 <div className="project-title-line"><span className="project-icon sf-icon"><BriefcaseBusiness size={20} /></span><h3>SubscriptionFlow</h3></div>
-                <p className="project-lede">End-to-end product engineering for a YC-backed subscription management platform.</p>
+                <p className="project-lede">Product engineering across a modern Next.js frontend and the systems behind a YC-backed subscription platform.</p>
                 <ul className="project-highlights">
-                  <li><Check size={14} /> Payment recovery and hosted checkout flows</li>
-                  <li><Check size={14} /> Real-time integrations and AI-powered tooling</li>
-                  <li><Check size={14} /> Reliability across cloud services and environments</li>
+                  <li><Check size={14} /> Modern dashboards and end-to-end subscription workflows</li>
+                  <li><Check size={14} /> Hosted checkout and payment recovery across gateways</li>
+                  <li><Check size={14} /> AI tooling, integrations, and production reliability</li>
                 </ul>
-                <div className="tag-list"><span>React</span><span>Vue</span><span>Laravel</span><span>AWS</span></div>
+                <div className="tag-list"><span>Next.js</span><span>TypeScript</span><span>Laravel</span><span>AWS</span></div>
                 <div className="project-actions">
                   <a className="text-link live-link" href="https://www.subscriptionflow.com/" target="_blank" rel="noreferrer">Visit company <ArrowUpRight size={16} /></a>
                 </div>
@@ -557,7 +590,9 @@ function App() {
             </div>
             <div className="project-visual subscription-visual">
               <div className="visual-label privacy-label"><i /> PUBLIC-SAFE OVERVIEW</div>
-              <SubscriptionConsole />
+              <MiniSubscriptionFlow />
+              <div className="floating-chip chip-top sf-floating-chip"><Sparkles size={13} /> Next.js frontend</div>
+              <div className="floating-chip chip-bottom sf-floating-chip"><BriefcaseBusiness size={13} /> Production SaaS</div>
             </div>
           </Reveal>
         </section>
