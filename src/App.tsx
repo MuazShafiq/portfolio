@@ -46,28 +46,28 @@ const skills = [
     number: "01",
     title: "Interfaces",
     text: "Responsive product experiences that feel intentional in every state.",
-    stack: "React · Next.js · Vue · Tailwind",
+    stack: "React · Next.js · Redux · Tailwind",
     icon: Layers3,
   },
   {
     number: "02",
     title: "Systems",
     text: "APIs, integrations, data flows, and the glue that keeps products reliable.",
-    stack: "Node.js · Laravel · SQL · Redis",
+    stack: "Node.js · Express · Laravel · Redis",
     icon: Cpu,
   },
   {
     number: "03",
     title: "Intelligence",
     text: "Useful AI features grounded in real workflows—not AI for its own sake.",
-    stack: "Python · LLMs · Scikit-learn · Vanna.ai",
+    stack: "Python · LLMs · Scikit-learn · Llama",
     icon: BrainCircuit,
   },
   {
     number: "04",
     title: "Delivery",
     text: "From first commit to production, with testing and operability built in.",
-    stack: "Docker · AWS · Vercel · Cypress",
+    stack: "Vercel · Vite · Cypress",
     icon: Zap,
   },
 ];
@@ -79,8 +79,8 @@ const experience = [
     role: "Software Engineer",
     note: "YC-backed subscription management platform",
     points: [
-      "Shipping end-to-end features across React, Vue, Laravel, and AI surfaces.",
-      "Built a real-time personalized marketing-script platform with Next.js and Vercel AI.",
+      "Shipping end-to-end features across React, Next.js, Laravel, and AI surfaces.",
+      "Modernized complex subscription workflows through a reusable Next.js frontend architecture.",
       "Improved payment recovery, email delivery, analytics, integrations, and test coverage.",
     ],
     current: true,
@@ -316,7 +316,7 @@ function TerminalModal({ onClose }: { onClose: () => void }) {
     const responses: Record<string, string> = {
       help: "Commands: about · work · skills · contact · whoami · origin · saltpepper · play · clear · exit",
       about: "Muaz builds across the stack, asks annoying questions, and refuses to let confusing systems stay confusing.",
-      skills: "TypeScript, React, Next.js, Vue, Node.js, Laravel, Python, SQL, AI/ML, Docker, AWS.",
+      skills: "TypeScript, React, Next.js, Node.js, Express, Laravel, Python, SQL, AI/ML.",
       contact: `Open to the right engineering role, client project, or collaboration → ${EMAIL}`,
       whoami: "Muaz Shafiq. Software engineer. Full-stack by circumstance; suspicious of vague abstractions by choice.",
       origin: "GIKI → FocusFlow → production systems → several technically unnecessary but educational side quests.",
@@ -485,7 +485,6 @@ function App() {
           <Reveal>
             <div className="section-heading">
               <div><span className="section-index">01 / SELECTED WORK</span><h2>Ideas, shipped.</h2></div>
-              <p>Things I built, why they exist, and where reality interfered.</p>
             </div>
           </Reveal>
 
@@ -501,7 +500,7 @@ function App() {
                   <li><Check size={14} /> Semantic search with exact article and style filters</li>
                   <li><Check size={14} /> Cross-device taste profiles and recommendation history</li>
                 </ul>
-                <div className="tag-list"><span>React</span><span>TypeScript</span><span>Supabase</span><span>Embeddings</span></div>
+                <div className="tag-list"><span>React</span><span>Tailwind CSS</span><span>Supabase</span><span>Embeddings</span></div>
                 <div className="project-actions">
                   <a className="text-link live-link" href="https://faask.vercel.app/" target="_blank" rel="noreferrer">Open live app <ArrowUpRight size={16} /></a>
                   <a className="text-link" href="https://github.com/MuazShafiq/faask" target="_blank" rel="noreferrer">Source code <GitBranch size={15} /></a>
@@ -526,9 +525,9 @@ function App() {
                 <ul className="project-highlights">
                   <li><Check size={14} /> Supabase-backed accounts, preferences, analytics, and progress</li>
                   <li><Check size={14} /> Admin-managed subject catalogue with PDF resource ingestion</li>
-                  <li><Check size={14} /> Voice, chat, blackboard, and offline lesson review packs</li>
+                  <li><Check size={14} /> Voice lessons, chat, and an interactive blackboard powered by Llama and Aura/MeloTTS</li>
                 </ul>
-                <div className="tag-list"><span>Next.js</span><span>TypeScript</span><span>Supabase</span><span>AI</span></div>
+                <div className="tag-list"><span>Next.js</span><span>Llama</span><span>Supabase</span><span>Aura / MeloTTS</span></div>
                 <div className="project-actions">
                   <a className="text-link live-link" href="https://koro-ai-lime.vercel.app/" target="_blank" rel="noreferrer">Open live app <ArrowUpRight size={16} /></a>
                   <a className="text-link" href="https://github.com/MuazShafiq/koro.ai" target="_blank" rel="noreferrer">Source code <GitBranch size={15} /></a>
@@ -549,13 +548,13 @@ function App() {
               <div className="project-number">03</div>
               <div>
                 <div className="project-title-line"><span className="project-icon focus-icon"><CalendarRange size={20} /></span><h3>FocusFlow</h3></div>
-                <p className="project-lede">An offline-capable adaptive planner that balances deadlines, energy, fixed commitments, and life—then syncs safely when connectivity returns.</p>
+                <p className="project-lede">An AI-assisted planner that turns tasks, deadlines, commitments, energy patterns, and lifestyle goals into a realistic calendar.</p>
                 <ul className="project-highlights">
-                  <li><Check size={14} /> Workbox PWA with IndexedDB-cached plans and tasks</li>
-                  <li><Check size={14} /> Durable optimistic queue with reconnect synchronization</li>
-                  <li><Check size={14} /> Idempotent writes, conflict handling, and local scheduling fallback</li>
+                  <li><Check size={14} /> Automatic 7 or 14-day plans built around deadlines and fixed commitments</li>
+                  <li><Check size={14} /> Constraint-aware scheduling balances priority, difficulty, energy, and workload</li>
+                  <li><Check size={14} /> Calendar views and completion feedback that improve future recommendations</li>
                 </ul>
-                <div className="tag-list"><span>React</span><span>Workbox</span><span>IndexedDB</span><span>MongoDB</span></div>
+                <div className="tag-list"><span>MERN</span><span>Scheduling ML</span><span>Flask</span><span>scikit-learn</span></div>
                 <div className="project-actions">
                   <a className="text-link live-link" href="https://focusflow-web-azure.vercel.app/" target="_blank" rel="noreferrer">Open live app <ArrowUpRight size={16} /></a>
                   <a className="text-link" href="https://github.com/MuazShafiq/focusflow-app" target="_blank" rel="noreferrer">Source code <GitBranch size={15} /></a>
@@ -565,8 +564,8 @@ function App() {
             <div className="project-visual focus-visual">
               <div className="visual-label"><i /> WEEK OPTIMIZED</div>
               <MiniFocusFlow />
-              <div className="floating-chip chip-top"><Sparkles size={13} /> Offline-ready</div>
-              <div className="floating-chip chip-bottom"><CalendarRange size={13} /> Sync on reconnect</div>
+              <div className="floating-chip chip-top"><Sparkles size={13} /> Energy-aware</div>
+              <div className="floating-chip chip-bottom"><CalendarRange size={13} /> 7–14 day plans</div>
             </div>
           </Reveal>
 
@@ -582,7 +581,7 @@ function App() {
                   <li><Check size={14} /> Hosted checkout and payment recovery across gateways</li>
                   <li><Check size={14} /> AI tooling, integrations, and production reliability</li>
                 </ul>
-                <div className="tag-list"><span>Next.js</span><span>TypeScript</span><span>Laravel</span><span>AWS</span></div>
+                <div className="tag-list"><span>Next.js</span><span>Laravel</span><span>MySQL</span><span>Redis</span></div>
                 <div className="project-actions">
                   <a className="text-link live-link" href="https://www.subscriptionflow.com/" target="_blank" rel="noreferrer">Visit company <ArrowUpRight size={16} /></a>
                 </div>
@@ -659,7 +658,11 @@ function App() {
               <Reveal className="about-card leadership-card">
                 <div className="about-card-head"><Sparkles size={20} /><span>LEADERSHIP</span></div>
                 <h3>Built communities, too.</h3>
-                <p>Vice President at IET on Campus GIKI—helped grow engagement by ~35% and recruitment by ~50%.</p>
+                <p>
+                  Events &amp; Logistics Coordinator at Microsoft Club GIKI (MLSA), managing logistics and finances for GIKI’s first intra and national hackathons.
+                  <br /><br />
+                  Also Vice President at IET on Campus GIKI, helping lead engagement, recruitment, and national-summit initiatives.
+                </p>
               </Reveal>
               <Reveal className="about-card location-card">
                 <div className="about-card-head"><MapPin size={20} /><span>BASED IN</span></div>
@@ -707,7 +710,6 @@ function App() {
       <footer className="site-footer section-shell">
         <div className="footer-top">
           <BrandMark />
-          <p>Built by Muaz, with salt, pepper,<br />and version control.</p>
           <div className="footer-links">
             <a href={GITHUB} target="_blank" rel="noreferrer"><GitBranch size={17} /> GitHub</a>
             <a href={LINKEDIN} target="_blank" rel="noreferrer"><ContactRound size={17} /> LinkedIn</a>

@@ -10,8 +10,8 @@ Easter eggs without getting in the way of recruiters and clients.
 ## Featured work
 
 - **Faask:** Swipe-first fashion discovery with taste learning and semantic search
-- **Koro.ai:** Production-ready voice tutoring with persistent learning data, managed resources, and offline review packs
-- **FocusFlow:** Offline-capable adaptive planning with durable synchronization and conflict handling
+- **Koro.ai:** Voice-first tutoring with Llama-powered lessons, managed resources, and Aura/MeloTTS speech
+- **FocusFlow:** AI-assisted adaptive planning with constraint-aware, energy-aware calendar generation
 - **SubscriptionFlow:** Public-safe highlights from production subscription software
 
 ## Stack

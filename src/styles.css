@@ -244,10 +244,10 @@ button {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(390px, .75fr);
   align-items: center;
-  gap: 64px;
-  min-height: 790px;
-  padding-top: 140px;
-  padding-bottom: 80px;
+  gap: 56px;
+  min-height: 720px;
+  padding-top: 125px;
+  padding-bottom: 65px;
 }
 
 .hero::before,
@@ -354,10 +354,10 @@ button {
 
 .hero-intro {
   max-width: 590px;
-  margin: 34px 0 0;
+  margin: 28px 0 0;
   color: #989ca1;
   font-size: 17px;
-  line-height: 1.75;
+  line-height: 1.65;
 }
 
 .hero-intro strong {
@@ -368,7 +368,7 @@ button {
 .hero-actions {
   display: flex;
   gap: 11px;
-  margin-top: 34px;
+  margin-top: 28px;
 }
 
 .button {
@@ -404,7 +404,7 @@ button {
 
 .hero-console {
   position: relative;
-  min-height: 510px;
+  min-height: 480px;
   overflow: hidden;
   background:
     linear-gradient(#24242655 1px, transparent 1px),
@@ -501,9 +501,9 @@ button {
 .portrait-slot {
   position: absolute;
   right: 27px;
-  bottom: 54px;
+  bottom: 46px;
   width: 54%;
-  height: 235px;
+  height: 220px;
   background:
     repeating-linear-gradient(118deg, transparent 0 15px, #e8e6e105 15px 16px, transparent 16px 29px),
     linear-gradient(145deg, #171719dd, #0d0d0faa);
@@ -2022,17 +2022,10 @@ button {
 
 .footer-top {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: start;
+  grid-template-columns: 1fr auto;
+  align-items: center;
   padding: 55px 0;
   border-top: 1px solid #292c31;
-}
-
-.footer-top p {
-  margin: 0;
-  color: #696d72;
-  font-size: 11px;
-  line-height: 1.6;
 }
 
 .footer-links {
@@ -2144,9 +2137,9 @@ button {
   .section-shell,
   .nav-shell { width: min(100% - 30px, 680px); }
   .nav-links { display: none; }
-  .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 155px; }
+  .hero { grid-template-columns: 1fr; gap: 38px; min-height: auto; padding-top: 130px; padding-bottom: 60px; }
   .hero-copy { max-width: 680px; }
-  .hero-console { width: min(100%, 480px); margin: 10px auto 0; transform: rotate(.7deg); }
+  .hero-console { width: min(100%, 480px); min-height: 445px; margin: 4px auto 0; transform: rotate(.7deg); }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 22px; }
   .project-card { grid-template-columns: 1fr; }
   .project-copy { min-height: 530px; border-right: 0; border-bottom: 1px solid #292c32; }
@@ -2166,14 +2159,22 @@ button {
   .nav-shell { min-height: 50px; }
   .command-trigger { display: none; }
   .nav-contact { padding-inline: 11px; }
-  .hero { gap: 42px; padding-top: 128px; padding-bottom: 75px; }
+  .hero { gap: 22px; padding-top: 100px; padding-bottom: 36px; }
+  .hero-copy { min-height: calc(100svh - 110px); }
   .hero h1 { font-size: clamp(46px, 14vw, 67px); }
   .hero-intro { font-size: 14px; }
   .hero-actions { align-items: stretch; flex-direction: column; }
   .button { width: 100%; }
-  .hero-console { min-height: 455px; }
-  .profile-code { padding-inline: 15px; font-size: 8px; }
-  .portrait-slot { right: 20px; width: 67%; height: 210px; }
+  .hero-console { min-height: 420px; }
+  .profile-code { padding: 24px 15px 10px; font-size: 8px; }
+  .portrait-slot {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 56%;
+    height: 118px;
+    margin: 0 18px 50px auto;
+  }
   .marquee { padding: 16px 0; }
   .work-section,
   .experience-section { padding-top: 105px; padding-bottom: 105px; }
