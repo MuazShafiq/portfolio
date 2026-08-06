@@ -557,7 +557,7 @@ function App() {
                 <div className="tag-list"><span>MERN</span><span>Scheduling ML</span><span>Flask</span><span>scikit-learn</span></div>
                 <div className="project-actions">
                   <a className="text-link live-link" href="https://focusflow-web-azure.vercel.app/" target="_blank" rel="noreferrer">Open live app <ArrowUpRight size={16} /></a>
-                  <a className="text-link" href="https://github.com/MuazShafiq/focusflow-app" target="_blank" rel="noreferrer">Source code <GitBranch size={15} /></a>
+                  <a className="text-link" href="https://github.com/MuazShafiq/focusflow" target="_blank" rel="noreferrer">Source code <GitBranch size={15} /></a>
                 </div>
               </div>
             </div>
