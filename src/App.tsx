@@ -527,7 +527,7 @@ function App() {
                   <li><Check size={14} /> Admin-managed subject catalogue with PDF resource ingestion</li>
                   <li><Check size={14} /> Voice lessons, chat, and an interactive blackboard powered by Llama and Aura/MeloTTS</li>
                 </ul>
-                <div className="tag-list"><span>Next.js</span><span>Llama</span><span>Supabase</span><span>Aura / MeloTTS</span></div>
+                <div className="tag-list"><span>Next.js</span><span>Llama 3.1</span><span>Supabase</span><span>Aura / MeloTTS</span></div>
                 <div className="project-actions">
                   <a className="text-link live-link" href="https://koro-ai-lime.vercel.app/" target="_blank" rel="noreferrer">Open live app <ArrowUpRight size={16} /></a>
                   <a className="text-link" href="https://github.com/MuazShafiq/koro.ai" target="_blank" rel="noreferrer">Source code <GitBranch size={15} /></a>
