@@ -498,7 +498,7 @@ function App() {
                 <ul className="project-highlights">
                   <li><Check size={14} /> Taste onboarding and swipe-based recommendation learning</li>
                   <li><Check size={14} /> Semantic search with exact article and style filters</li>
-                  <li><Check size={14} /> Cross-device taste profiles and recommendation history</li>
+                  <li><Check size={14} /> Live, normalized multi-retailer catalogue</li>
                 </ul>
                 <div className="tag-list"><span>React</span><span>Tailwind CSS</span><span>Supabase</span><span>Embeddings</span></div>
                 <div className="project-actions">
