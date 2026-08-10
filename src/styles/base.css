@@ -1,0 +1,128 @@
+/* Design tokens, resets, and cross-cutting utilities used by every section below. */
+
+:root {
+  font-family: "Manrope", Arial, sans-serif;
+  color: #f2f0eb;
+  background: #0b0b0d;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --salt: #f2f0eb;
+  --silver: #b8b8b4;
+  --steel: #787a7d;
+  --graphite: #1a1a1d;
+  --pepper: #0b0b0d;
+  --ink: var(--salt);
+  --muted: #aaa9a6;
+  --faint: #727377;
+  --paper: var(--pepper);
+  --panel: #121214;
+  --panel-2: var(--graphite);
+  --line: #343438;
+  --salt-accent: #d8d6d0;
+  --signal: #9aaa7c;
+  --purple: #aa89ff;
+  --cyan: #69e5ff;
+  --orange: #ff9e5e;
+  --pink: #ff7eb6;
+  --blue: #78a8ff;
+  --mono: "DM Mono", "Courier New", monospace;
+  --mouse-x: 50vw;
+  --mouse-y: 50vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 82% 5%, #f1efe911, transparent 26%),
+    radial-gradient(circle at 70% 18%, #8e6cff0b, transparent 23%),
+    radial-gradient(circle at 12% 31%, #e6e3dd0b, transparent 24%),
+    var(--paper);
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  content: "";
+  opacity: .17;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+}
+
+::selection {
+  color: #08090c;
+  background: var(--salt-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--salt-accent);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: -80px;
+  left: 20px;
+  z-index: 1000;
+  padding: 12px 18px;
+  color: #08090c;
+  background: var(--salt-accent);
+  border-radius: 0 0 10px 10px;
+  transition: top .2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.ambient-glow {
+  position: fixed;
+  top: var(--mouse-y);
+  left: var(--mouse-x);
+  z-index: -1;
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 38% 38%, #69e5ff18 0, transparent 27%),
+    radial-gradient(circle at 62% 55%, #aa89ff1a 0, transparent 36%),
+    radial-gradient(circle, #f1efe90d 0, transparent 68%);
+  transform: translate(-50%, -50%);
+}
+
+.section-shell,
+.nav-shell {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}

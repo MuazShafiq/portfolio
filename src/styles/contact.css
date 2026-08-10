@@ -1,0 +1,111 @@
+/* Contact section. Its heading em color is set in hero.css (shared with section-heading and
+   about-lead). */
+
+.contact-section {
+  padding-top: 135px;
+  padding-bottom: 115px;
+}
+
+.contact-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.35fr .65fr;
+  gap: 70px;
+  min-height: 470px;
+  padding: 70px;
+  overflow: hidden;
+  color: #0a0b0d;
+  background:
+    radial-gradient(circle at 88% 14%, #69e5ff6b, transparent 25%),
+    radial-gradient(circle at 68% 92%, #aa89ff55, transparent 28%),
+    radial-gradient(circle at 8% 95%, #ff9e5e38, transparent 25%),
+    linear-gradient(118deg, #ece9e2, #d9d6d0 68%, #e7e1ee);
+  border-radius: 26px;
+}
+
+.contact-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#08090c0c 1px, transparent 1px), linear-gradient(90deg, #08090c0c 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(90deg, transparent, #000);
+}
+
+.contact-card::after {
+  position: absolute;
+  right: -120px;
+  bottom: -120px;
+  width: 400px;
+  height: 400px;
+  content: "";
+  border: 1px solid #08090c1a;
+  border-radius: 50%;
+  box-shadow: 0 0 0 40px #08090c08, 0 0 0 80px #08090c08;
+}
+
+.contact-copy,
+.contact-terminal {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow.light { color: #374126; }
+.eyebrow.light .pulse-dot { background: #11150b; box-shadow: none; }
+.eyebrow.light .pulse-dot::after { border-color: #11150b; }
+
+.contact-copy h2 {
+  margin: 0;
+  font-size: clamp(44px, 5.2vw, 72px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.06em;
+}
+
+.contact-copy h2 em { color: #6641c2; }
+
+.contact-copy > p {
+  max-width: 570px;
+  margin: 25px 0 31px;
+  color: #3d462e;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #13150f;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.contact-terminal {
+  align-self: center;
+  padding: 25px;
+  color: #c9ccc3;
+  background: #0d0f12;
+  border: 1px solid #373b34;
+  border-radius: 14px;
+  box-shadow: 8px 8px 0 #aa89ff66, 15px 15px 0 #69e5ff40;
+  font-family: var(--mono);
+  font-size: 9px;
+  transform: rotate(2deg);
+}
+
+.terminal-line {
+  padding-bottom: 16px;
+  margin-bottom: 15px;
+  color: #72776e;
+  border-bottom: 1px solid #292c28;
+}
+
+.terminal-line span { color: var(--salt-accent); }
+.contact-terminal p { margin: 12px 0; }
+.contact-terminal p:nth-of-type(1) i { color: var(--purple); }
+.contact-terminal p:nth-of-type(2) i { color: var(--cyan); }
+.contact-terminal p:nth-of-type(3) i { color: var(--orange); }
+.contact-terminal p i { margin-right: 7px; font-style: normal; }
+.contact-terminal a { display: flex; align-items: center; gap: 4px; margin-top: 20px; color: #d4c3ff; }
+

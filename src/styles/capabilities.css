@@ -1,0 +1,115 @@
+/* "How I build" capability grid section. */
+
+.capabilities-section {
+  padding: 135px 0 145px;
+  background: linear-gradient(120deg, #c9c9c5, #eeece7 42%, #d7d6d1);
+  color: #0a0b0d;
+  transform: skewY(-1deg);
+}
+
+.capabilities-section .section-index {
+  color: #673ec5;
+}
+
+.capabilities-section > .section-shell {
+  transform: skewY(1deg);
+}
+
+.section-heading.compact {
+  margin-bottom: 66px;
+}
+
+.section-heading.compact h2 em {
+  color: #5e37bd;
+}
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #bfc1ba;
+  border-bottom: 1px solid #bfc1ba;
+}
+
+.capability-card {
+  position: relative;
+  min-height: 350px;
+  padding: 25px 23px 30px;
+  overflow: hidden;
+  border-right: 1px solid #bfc1ba;
+  transition: background .3s ease;
+}
+
+.capability-card:nth-child(1):hover { background: #aa89ff13; }
+.capability-card:nth-child(2):hover { background: #69e5ff18; }
+.capability-card:nth-child(3):hover { background: #ff7eb614; }
+.capability-card:nth-child(4):hover { background: #ff9e5e18; }
+
+.capability-card:last-child { border-right: 0; }
+
+.capability-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #666861;
+  font-family: var(--mono);
+  font-size: 10px;
+}
+
+.capability-card h3 {
+  margin: 86px 0 12px;
+  font-size: 24px;
+  letter-spacing: -.04em;
+}
+
+.capability-card p {
+  min-height: 67px;
+  margin: 0;
+  color: #686a64;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.capability-card small {
+  display: block;
+  margin-top: 22px;
+  color: #4a4c47;
+  font-family: var(--mono);
+  font-size: 8px;
+  line-height: 1.6;
+}
+
+.capability-arrow {
+  position: absolute;
+  top: 56px;
+  right: 23px;
+  display: grid;
+  width: 35px;
+  height: 35px;
+  place-items: center;
+  color: #e8e6e1;
+  background: #0b0c0e;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity .3s, transform .3s;
+}
+
+.capability-card:hover .capability-arrow { opacity: 1; transform: translateY(0); }
+
+.capability-stripe {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s;
+}
+
+.capability-card:hover .capability-stripe { transform: scaleX(1); }
+.stripe-1 { background: var(--purple); }
+.stripe-2 { background: var(--cyan); }
+.stripe-3 { background: var(--salt-accent); }
+.stripe-4 { background: var(--orange); }
+

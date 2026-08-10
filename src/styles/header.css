@@ -1,0 +1,117 @@
+/* Site header / nav. Also carries .footer-links a's color/hover (grouped with .nav-links) and
+   .button.primary:hover (grouped with .nav-contact) — see footer.css and hero.css for the rest. */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+  padding: 14px 0;
+  background: linear-gradient(to bottom, #08090ce8, #08090ca8 70%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.nav-shell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 54px;
+  padding: 7px 8px 7px 12px;
+  border: 1px solid #39393d;
+  border-radius: 16px;
+  background: linear-gradient(110deg, #111113e8, #1b1b1edb 48%, #101012e8);
+  box-shadow: 0 12px 50px #0006;
+}
+
+.nav-shell::after {
+  position: absolute;
+  right: 22px;
+  bottom: -1px;
+  left: 22px;
+  height: 1px;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(90deg, transparent, #aa89ff70, #69e5ff66, #ff9e5e70, transparent);
+  opacity: .75;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 52px;
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -.06em;
+}
+
+.brand-mark i {
+  width: 7px;
+  height: 7px;
+  background: var(--signal);
+  border-radius: 50%;
+  box-shadow: 0 0 12px #9aaa7c80;
+}
+
+.nav-links {
+  display: flex;
+  gap: 34px;
+  color: #afb1b5;
+  font-size: 13px;
+}
+
+.nav-links a,
+.footer-links a {
+  transition: color .2s;
+}
+
+.nav-links a:hover,
+.footer-links a:hover {
+  color: var(--cyan);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.command-trigger,
+.nav-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.command-trigger {
+  color: #999da2;
+  background: transparent;
+  border: 1px solid #292c32;
+  cursor: pointer;
+}
+
+.command-trigger span {
+  font-family: var(--mono);
+}
+
+.nav-contact {
+  color: #0a0b0d;
+  background: linear-gradient(110deg, #eeece6, #d8d5e6 66%, #c9eaf0);
+  border: 1px solid #ffffff70;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.nav-contact:hover,
+.button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: -7px 8px 26px #aa89ff22, 8px 9px 28px #69e5ff1c;
+}
+

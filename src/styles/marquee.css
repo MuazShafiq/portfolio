@@ -1,0 +1,44 @@
+/* Scrolling capability marquee strip between the hero and work section. */
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+  color: #171719;
+  background: linear-gradient(90deg, #aaa9a5, #f0eee8 38%, #c4c3bf 70%, #eeece7);
+  transform: rotate(-1deg) scale(1.01);
+}
+
+.marquee::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  content: "";
+  background: linear-gradient(90deg, var(--purple), var(--cyan), var(--salt-accent), var(--orange), var(--purple));
+}
+
+.marquee > div {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee span {
+  margin: 0 28px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .08em;
+}
+
+.marquee svg {
+  width: 14px;
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+

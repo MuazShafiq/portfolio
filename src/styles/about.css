@@ -1,0 +1,189 @@
+/* About section. Its heading em color/font are set in hero.css (shared with section-heading
+   and contact-copy); its orange .section-index color is set alongside .work-section in
+   projects.css. */
+
+.about-section {
+  padding: 130px 0;
+  background: linear-gradient(115deg, #101012, #171719 48%, #0f0f11);
+  border-top: 1px solid #1f2227;
+  border-bottom: 1px solid #1f2227;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.about-lead {
+  position: sticky;
+  top: 130px;
+}
+
+.about-lead p {
+  max-width: 480px;
+  margin: 30px 0;
+  color: #8f9398;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.about-lead .about-personal-note {
+  margin-top: -12px;
+  color: #a8aaad;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.about-card {
+  position: relative;
+  min-height: 250px;
+  padding: 28px;
+  overflow: hidden;
+  background: #14171c;
+  border: 1px solid #2a2d33;
+  border-radius: 18px;
+}
+
+.education-card { grid-column: 1 / -1; min-height: 225px; background: linear-gradient(125deg, #161423, #13161b 70%); }
+.education-card::after {
+  position: absolute;
+  top: -90px;
+  right: -60px;
+  width: 300px;
+  height: 300px;
+  content: "";
+  background: repeating-radial-gradient(circle, #a580ff 0 1px, transparent 1px 13px);
+  opacity: .18;
+}
+
+.leadership-card { background: linear-gradient(150deg, #1a1a1b, #121214); }
+.location-card { background: #141416; }
+.interests-card {
+  grid-column: 1 / -1;
+  min-height: 235px;
+  background:
+    radial-gradient(circle at 92% 12%, #b8849c18, transparent 30%),
+    linear-gradient(135deg, #181718, #121416);
+}
+
+.education-card { border-top-color: #aa89ff70; }
+.leadership-card { border-top-color: #ff9e5e70; }
+.location-card { border-top-color: #69e5ff70; }
+.interests-card { border-top-color: #c99baa70; }
+.education-card .about-card-head { color: var(--purple); }
+.leadership-card .about-card-head { color: var(--orange); }
+.location-card .about-card-head { color: var(--cyan); }
+.interests-card .about-card-head { color: #c99baa; }
+
+.about-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--salt-accent);
+}
+
+.about-card-head span {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: .1em;
+}
+
+.about-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 58px 0 6px;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: -.04em;
+}
+
+.education-card h3 { margin-top: 54px; font-size: 28px; }
+.interests-card h3 { margin-top: 34px; }
+
+.interest-list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 20px 0 15px;
+}
+
+.interest-list span {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  color: #c7c5c3;
+  font-family: var(--mono);
+  font-size: 9px;
+  background: #e4e0d908;
+  border: 1px solid #ddd5cc1c;
+  border-radius: 9px;
+}
+
+.interest-list span:nth-child(2) svg { color: #87bac2; }
+.interest-list span:nth-child(3) svg { color: #b89bd0; }
+.interest-list span:nth-child(4) svg { color: #c59b78; }
+
+.about-card p,
+.about-card small {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #7c8187;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.about-card small { display: block; margin-top: 18px; font-family: var(--mono); }
+
+.map-orbit {
+  position: absolute;
+  top: 34px;
+  right: 26px;
+  display: grid;
+  width: 100px;
+  height: 100px;
+  place-items: center;
+  border: 1px solid #4aa9b733;
+  border-radius: 50%;
+}
+
+.map-orbit::before,
+.map-orbit::after {
+  position: absolute;
+  content: "";
+  border: 1px solid #4aa9b72b;
+  border-radius: 50%;
+}
+
+.map-orbit::before { inset: 14px; }
+.map-orbit::after { inset: 29px; background: var(--cyan); box-shadow: 0 0 26px #69e5ff7a; }
+
+.map-orbit span {
+  position: relative;
+  z-index: 2;
+  color: #081014;
+  font-family: var(--mono);
+  font-size: 7px;
+}
+
+.map-orbit i {
+  position: absolute;
+  z-index: 2;
+  width: 4px;
+  height: 4px;
+  background: #65a2a9;
+  border-radius: 50%;
+}
+.map-orbit i:first-child { top: 11px; left: 28px; }
+.map-orbit i:nth-child(2) { right: 10px; bottom: 31px; }
+.map-orbit i:nth-child(3) { bottom: 7px; left: 35px; }
+
