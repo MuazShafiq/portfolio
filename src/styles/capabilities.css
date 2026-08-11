@@ -2,13 +2,13 @@
 
 .capabilities-section {
   padding: 135px 0 145px;
-  background: linear-gradient(120deg, #c9c9c5, #eeece7 42%, #d7d6d1);
-  color: #0a0b0d;
+  background: #121214;
+  color: var(--ink);
   transform: skewY(-1deg);
 }
 
 .capabilities-section .section-index {
-  color: #673ec5;
+  color: var(--purple);
 }
 
 .capabilities-section > .section-shell {
@@ -19,15 +19,11 @@
   margin-bottom: 66px;
 }
 
-.section-heading.compact h2 em {
-  color: #5e37bd;
-}
-
 .capability-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid #bfc1ba;
-  border-bottom: 1px solid #bfc1ba;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .capability-card {
@@ -35,7 +31,7 @@
   min-height: 350px;
   padding: 25px 23px 30px;
   overflow: hidden;
-  border-right: 1px solid #bfc1ba;
+  border-right: 1px solid var(--line);
   transition: background .3s ease;
 }
 
@@ -50,7 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #666861;
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 10px;
 }
@@ -64,7 +60,7 @@
 .capability-card p {
   min-height: 67px;
   margin: 0;
-  color: #686a64;
+  color: var(--muted);
   font-size: 12px;
   line-height: 1.65;
 }
@@ -72,29 +68,11 @@
 .capability-card small {
   display: block;
   margin-top: 22px;
-  color: #4a4c47;
+  color: #75787d;
   font-family: var(--mono);
   font-size: 8px;
   line-height: 1.6;
 }
-
-.capability-arrow {
-  position: absolute;
-  top: 56px;
-  right: 23px;
-  display: grid;
-  width: 35px;
-  height: 35px;
-  place-items: center;
-  color: #e8e6e1;
-  background: #0b0c0e;
-  border-radius: 50%;
-  opacity: 0;
-  transform: translateY(-8px);
-  transition: opacity .3s, transform .3s;
-}
-
-.capability-card:hover .capability-arrow { opacity: 1; transform: translateY(0); }
 
 .capability-stripe {
   position: absolute;

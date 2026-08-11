@@ -8,8 +8,40 @@ export function TerminalModal({ onClose }: { onClose: () => void }) {
   ]);
   const [value, setValue] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+  const windowRef = useRef<HTMLElement>(null);
 
   useEffect(() => inputRef.current?.focus(), []);
+
+  // Lock background scroll while the overlay is open.
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, []);
+
+  // Trap Tab focus inside the modal so it can't move to the page behind the overlay.
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Tab" || !windowRef.current) return;
+      const focusable = windowRef.current.querySelectorAll<HTMLElement>(
+        'button, input, [href], [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   const run = (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -54,7 +86,7 @@ export function TerminalModal({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="command-overlay" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
-      <section className="command-window" role="dialog" aria-modal="true" aria-label="Interactive command palette">
+      <section ref={windowRef} className="command-window" role="dialog" aria-modal="true" aria-label="Interactive command palette">
         <header>
           <div><span /><span /><span /></div>
           <p><TerminalSquare size={14} /> muaz@portfolio: ~</p>

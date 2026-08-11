@@ -1,8 +1,10 @@
 ---
+import { getImage } from "astro:assets";
 import "@fontsource-variable/manrope";
 import "@fontsource/dm-mono/300.css";
 import "@fontsource/dm-mono/400.css";
 import "@fontsource/dm-mono/500.css";
+import portraitSource from "../assets/muaz-portrait.jpeg";
 import App from "../App";
 import "../styles/base.css";
 import "../styles/header.css";
@@ -19,6 +21,13 @@ import "../styles/responsive.css";
 
 const siteUrl = "https://muaz-shafiq-portfolio.vercel.app";
 const socialImageUrl = `${siteUrl}/muaz-portrait-original.jpeg`;
+
+// The hero portrait renders at roughly 200-300px wide in the layout (object-fit: cover
+// inside a fixed-size slot), so it's built here as a right-sized, re-encoded WebP rather
+// than shipping the ~250KB source JPEG as-is — see CLAUDE.md for why this lives in
+// index.astro (astro:assets only optimizes images at the Astro-file build layer) and gets
+// passed into the App island as props instead of being imported directly inside App.tsx.
+const portrait = await getImage({ src: portraitSource, format: "webp", quality: 82 });
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -91,11 +100,12 @@ const structuredData = {
     />
     <meta name="twitter:image" content={socialImageUrl} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     <title>Muaz Shafiq — Software Engineer · Full-stack & AI</title>
   </head>
   <body>
-    <App client:load />
+    <App client:load portraitSrc={portrait.src} portraitWidth={portrait.attributes.width} portraitHeight={portrait.attributes.height} />
   </body>
 </html>

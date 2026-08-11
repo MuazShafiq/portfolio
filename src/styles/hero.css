@@ -25,11 +25,12 @@
 }
 
 .hero::before {
-  top: 150px;
-  right: 31%;
-  width: 150px;
-  height: 150px;
-  background: radial-gradient(circle at 35% 30%, #b497ff30, #7c5cdc0d 52%, transparent 70%);
+  top: -100px;
+  right: -80px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle at 40% 35%, #b497ff55, #7c5cdc22 48%, transparent 72%);
+  filter: blur(70px);
 }
 
 .hero::after {
@@ -168,7 +169,7 @@
 
 .hero-console {
   position: relative;
-  min-height: 480px;
+  min-height: 600px;
   overflow: hidden;
   background:
     linear-gradient(#24242655 1px, transparent 1px),
@@ -263,15 +264,23 @@
 }
 
 .portrait-slot {
-  position: absolute;
-  right: 27px;
-  bottom: 46px;
-  width: 54%;
-  height: 220px;
+  position: relative;
+  width: auto;
+  height: 300px;
+  margin: 4px 26px 55px;
   background:
     repeating-linear-gradient(118deg, transparent 0 15px, #e8e6e105 15px 16px, transparent 16px 29px),
     linear-gradient(145deg, #171719dd, #0d0d0faa);
   border: 1px dashed #57575b;
+}
+
+.portrait-slot::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(180deg, transparent 42%, #111113 98%);
 }
 
 .portrait-slot::before {
@@ -298,6 +307,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center 18%;
+  filter: sepia(.28) saturate(1.2) hue-rotate(-8deg) brightness(.9) contrast(1.06);
 }
 
 .scan-corner {

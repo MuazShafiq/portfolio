@@ -60,7 +60,14 @@ function LahoreTime() {
   return <time suppressHydrationWarning>{time} PKT</time>;
 }
 
-function App() {
+type AppProps = {
+  /** Pre-optimized (astro:assets, built in index.astro) WebP for the hero portrait. */
+  portraitSrc: string;
+  portraitWidth: number;
+  portraitHeight: number;
+};
+
+function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
   const [terminalOpen, setTerminalOpen] = useState(false);
 
   useEffect(() => {
@@ -147,10 +154,10 @@ function App() {
               <div className="scan-corner top-left" /><div className="scan-corner top-right" />
               <img
                 className="portrait-photo"
-                src="/muaz-portrait-original.jpeg"
+                src={portraitSrc}
                 alt="Muaz Shafiq wearing a cream button-up shirt"
-                width="720"
-                height="1280"
+                width={portraitWidth}
+                height={portraitHeight}
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
@@ -302,7 +309,6 @@ function App() {
                     <h3>{skill.title}</h3>
                     <p>{skill.text}</p>
                     <small>{skill.stack}</small>
-                    <div className="capability-arrow"><ArrowDownRight size={18} /></div>
                     <i className={`capability-stripe stripe-${index + 1}`} />
                   </Reveal>
                 );
@@ -319,11 +325,17 @@ function App() {
             </div>
           </Reveal>
           <div className="experience-list">
-            {experience.map((item, index) => (
-              <Reveal className="experience-row" key={item.company}>
-                <div className="experience-period"><span>{item.period}</span>{item.current && <i>NOW</i>}</div>
-                <div className="experience-title"><span>0{index + 1}</span><h3>{item.company}</h3><p>{item.note}</p></div>
-                <div className="experience-detail"><h4>{item.role}</h4><ul>{item.points.map((point) => <li key={point}>{point}</li>)}</ul></div>
+            {experience.map((item) => (
+              <Reveal className={item.current ? "experience-row current" : "experience-row"} key={item.company}>
+                <div className="experience-meta">
+                  <div className="experience-top">
+                    <span className="experience-period">{item.period}</span>
+                    {item.current && <i>NOW</i>}
+                  </div>
+                  <h3>{item.company}</h3>
+                  <p className="experience-role">{item.role} · {item.note}</p>
+                </div>
+                <ul className="experience-points">{item.points.map((point) => <li key={point}>{point}</li>)}</ul>
               </Reveal>
             ))}
           </div>
@@ -380,7 +392,7 @@ function App() {
             <div className="contact-card">
               <div className="contact-grid" aria-hidden="true" />
               <div className="contact-copy">
-                <div className="eyebrow light"><span className="pulse-dot" /> Open to roles, freelance & good ideas</div>
+                <div className="eyebrow"><span className="pulse-dot" /> Open to roles, freelance & good ideas</div>
                 <h2>Have a problem worth<br /><em>solving?</em></h2>
                 <p>Have a real problem, a strange idea, or both? Send it over. I’m always up for an ambitious product, a thoughtful team, or a problem that needs a fresh angle.</p>
                 <a className="contact-email" href={`mailto:${EMAIL}?subject=Hello%20Muaz`}>{EMAIL} <ArrowUpRight /></a>

@@ -14,19 +14,20 @@
   min-height: 470px;
   padding: 70px;
   overflow: hidden;
-  color: #0a0b0d;
+  color: var(--ink);
   background:
-    radial-gradient(circle at 88% 14%, #69e5ff6b, transparent 25%),
-    radial-gradient(circle at 68% 92%, #aa89ff55, transparent 28%),
-    radial-gradient(circle at 8% 95%, #ff9e5e38, transparent 25%),
-    linear-gradient(118deg, #ece9e2, #d9d6d0 68%, #e7e1ee);
+    radial-gradient(circle at 88% 14%, #69e5ff2e, transparent 25%),
+    radial-gradient(circle at 68% 92%, #aa89ff2a, transparent 28%),
+    radial-gradient(circle at 8% 95%, #ff9e5e1c, transparent 25%),
+    #121214;
+  border: 1px solid var(--line);
   border-radius: 26px;
 }
 
 .contact-grid {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(#08090c0c 1px, transparent 1px), linear-gradient(90deg, #08090c0c 1px, transparent 1px);
+  background-image: linear-gradient(#f2f0eb0c 1px, transparent 1px), linear-gradient(90deg, #f2f0eb0c 1px, transparent 1px);
   background-size: 34px 34px;
   mask-image: linear-gradient(90deg, transparent, #000);
 }
@@ -38,9 +39,9 @@
   width: 400px;
   height: 400px;
   content: "";
-  border: 1px solid #08090c1a;
+  border: 1px solid #f2f0eb14;
   border-radius: 50%;
-  box-shadow: 0 0 0 40px #08090c08, 0 0 0 80px #08090c08;
+  box-shadow: 0 0 0 40px #f2f0eb08, 0 0 0 80px #f2f0eb08;
 }
 
 .contact-copy,
@@ -48,10 +49,6 @@
   position: relative;
   z-index: 2;
 }
-
-.eyebrow.light { color: #374126; }
-.eyebrow.light .pulse-dot { background: #11150b; box-shadow: none; }
-.eyebrow.light .pulse-dot::after { border-color: #11150b; }
 
 .contact-copy h2 {
   margin: 0;
@@ -61,12 +58,12 @@
   letter-spacing: -.06em;
 }
 
-.contact-copy h2 em { color: #6641c2; }
+.contact-copy h2 em { color: var(--purple); }
 
 .contact-copy > p {
   max-width: 570px;
   margin: 25px 0 31px;
-  color: #3d462e;
+  color: var(--muted);
   font-size: 13px;
   line-height: 1.7;
 }
@@ -76,7 +73,7 @@
   align-items: center;
   gap: 12px;
   padding-bottom: 6px;
-  border-bottom: 2px solid #13150f;
+  border-bottom: 2px solid var(--salt-accent);
   font-size: 14px;
   font-weight: 800;
 }

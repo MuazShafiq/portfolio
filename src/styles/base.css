@@ -8,23 +8,15 @@
   text-rendering: optimizeLegibility;
   --salt: #f2f0eb;
   --silver: #b8b8b4;
-  --steel: #787a7d;
-  --graphite: #1a1a1d;
   --pepper: #0b0b0d;
   --ink: var(--salt);
   --muted: #aaa9a6;
-  --faint: #727377;
   --paper: var(--pepper);
-  --panel: #121214;
-  --panel-2: var(--graphite);
-  --line: #343438;
   --salt-accent: #d8d6d0;
   --signal: #9aaa7c;
   --purple: #aa89ff;
   --cyan: #69e5ff;
   --orange: #ff9e5e;
-  --pink: #ff7eb6;
-  --blue: #78a8ff;
   --mono: "DM Mono", "Courier New", monospace;
   --mouse-x: 50vw;
   --mouse-y: 50vh;
@@ -37,6 +29,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  overflow-x: hidden;
 }
 
 body {
