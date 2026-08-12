@@ -42,9 +42,9 @@ export const experience = [
     role: "Software Engineer",
     note: "YC-backed subscription management platform",
     points: [
-      "Shipping end-to-end features across React, Next.js, Laravel, and AI surfaces.",
-      "Modernized complex subscription workflows through a reusable Next.js frontend architecture.",
-      "Improved payment recovery, email delivery, analytics, integrations, and test coverage.",
+      "Built subscription billing and SaaS workflows across Laravel/MySQL backends and Next.js interfaces.",
+      "Integrated Microsoft 365 shared mailboxes, Klaviyo, and Monday.com with resilient synchronization and failure recovery.",
+      "Improved invoice dunning, hosted checkout validation, scheduled email delivery, and payment recovery.",
     ],
     current: true,
   },
@@ -64,8 +64,8 @@ export const experience = [
     role: "Software Development Intern",
     note: "Logistics technology",
     points: [
-      "Migrated a logistics workflow from Java to Flutter with routing and inventory modules.",
-      "Improved feature responsiveness by roughly 15% through real-time API integrations.",
+      "Rebuilt Java logistics features in Flutter for routing, inventory, and driver workflows.",
+      "Connected the migrated application to live backend data and APIs.",
     ],
   },
 ];

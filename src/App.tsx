@@ -212,9 +212,9 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
                 <div className="project-title-line"><span className="project-icon faask-icon"><Heart size={20} /></span><h3>Faask</h3></div>
                 <p className="project-lede">A swipe-first fashion discovery app that learns personal taste and turns it into sharper recommendations.</p>
                 <ul className="project-highlights">
-                  <li><Check size={14} /> Taste onboarding and swipe-based recommendation learning</li>
-                  <li><Check size={14} /> Semantic search with exact article and style filters</li>
-                  <li><Check size={14} /> Live, normalized multi-retailer catalogue</li>
+                  <li><Check size={14} /> Adaptive recommendations from onboarding preferences and swipe-learned taste embeddings</li>
+                  <li><Check size={14} /> Hybrid semantic and full-text search with exact article and style filters</li>
+                  <li><Check size={14} /> 13,700+ active products normalized across 10+ Pakistani retailers</li>
                 </ul>
                 <div className="tag-list"><span>React</span><span>Tailwind CSS</span><span>Supabase</span><span>Embeddings</span></div>
                 <div className="project-actions">
@@ -295,7 +295,7 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
                 <ul className="project-highlights">
                   <li><Check size={14} /> Modern dashboards and end-to-end subscription workflows</li>
                   <li><Check size={14} /> Hosted checkout and payment recovery across gateways</li>
-                  <li><Check size={14} /> AI tooling, integrations, and production reliability</li>
+                  <li><Check size={14} /> Microsoft 365, Klaviyo, and Monday.com integrations with resilient recovery paths</li>
                 </ul>
                 <div className="tag-list"><span>Next.js</span><span>Laravel</span><span>MySQL</span><span>Redis</span></div>
                 <div className="project-actions">
