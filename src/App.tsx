@@ -285,7 +285,7 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
               </div>
             </div>
             <div className="project-visual subscription-visual">
-              <div className="visual-label privacy-label"><i /> PUBLIC-SAFE OVERVIEW</div>
+              <div className="visual-label privacy-label"><i /> DASHBOARD OVERVIEW</div>
               <MiniSubscriptionFlow />
               <div className="floating-chip chip-top sf-floating-chip"><Sparkles size={13} /> Next.js frontend</div>
               <div className="floating-chip chip-bottom sf-floating-chip"><BriefcaseBusiness size={13} /> Production SaaS</div>

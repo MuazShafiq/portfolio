@@ -224,6 +224,7 @@
 
 .visual-label {
   position: absolute;
+  z-index: 3;
   top: 22px;
   right: 25px;
   display: flex;
