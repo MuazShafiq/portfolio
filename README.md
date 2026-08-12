@@ -18,7 +18,7 @@ experiences.
 
 ## Featured work
 
-### [Faask](https://faask.vercel.app/)
+### Faask
 
 A swipe-first fashion discovery app that learns personal taste and turns it
 into sharper recommendations. It combines adaptive taste ranking, hybrid
@@ -27,7 +27,7 @@ active products across 10+ Pakistani retailers.
 
 [Live app](https://faask.vercel.app/) · [Source code](https://github.com/MuazShafiq/faask)
 
-### [Koro.ai](https://koro-ai-lime.vercel.app/)
+### Koro.ai
 
 A voice-first AI tutor with adaptive lessons, persistent learning data,
 progress tracking, managed educational resources, and Llama-powered learning
@@ -35,14 +35,14 @@ experiences with Aura and MeloTTS speech.
 
 [Live app](https://koro-ai-lime.vercel.app/) · [Source code](https://github.com/MuazShafiq/koro.ai)
 
-### [FocusFlow](https://focusflow-web-azure.vercel.app/)
+### FocusFlow
 
 An AI-assisted planner that turns tasks, deadlines, fixed commitments, energy
 patterns, and lifestyle goals into realistic 7- or 14-day schedules.
 
 [Live app](https://focusflow-web-azure.vercel.app/) · [Source code](https://github.com/MuazShafiq/focusflow)
 
-### [SubscriptionFlow](https://www.subscriptionflow.com/)
+### SubscriptionFlow
 
 Product engineering across a modern Next.js frontend and the Laravel/MySQL
 systems behind a YC-backed subscription management platform, including
