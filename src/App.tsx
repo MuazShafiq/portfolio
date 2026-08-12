@@ -7,6 +7,7 @@ import {
   BriefcaseBusiness,
   CalendarRange,
   Check,
+  ChevronDown,
   ChevronRight,
   Clapperboard,
   Code2,
@@ -91,6 +92,17 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
     };
   }, []);
 
+  // Drives the mobile "scroll for more" hint (hidden on desktop; see .scroll-hint in hero.css) —
+  // fades it out as soon as the visitor actually starts scrolling.
+  useEffect(() => {
+    const onScroll = () => {
+      document.documentElement.classList.toggle("has-scrolled", window.scrollY > 40);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
       <Preloader />
@@ -170,6 +182,11 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
               <span><i /> ONLINE</span>
               <span>LHR · <LahoreTime /></span>
             </div>
+          </div>
+
+          <div className="scroll-hint" aria-hidden="true">
+            <span>Scroll</span>
+            <ChevronDown size={16} />
           </div>
         </section>
 

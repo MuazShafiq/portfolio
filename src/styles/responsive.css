@@ -21,6 +21,7 @@
   .hero-copy { max-width: 680px; }
   .hero::before { top: -60px; right: -30px; width: 260px; height: 260px; }
   .hero-console { width: min(100%, 480px); min-height: 445px; margin: 4px auto 0; transform: rotate(.7deg); }
+  .scroll-hint { display: flex; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 22px; }
   .project-card { grid-template-columns: 1fr; }
   .project-copy { padding: 0 0 32px; border-right: 0; border-bottom: 1px solid var(--line); }

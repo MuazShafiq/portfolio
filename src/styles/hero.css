@@ -354,3 +354,41 @@
   box-shadow: 0 0 8px #9aaa7c80;
 }
 
+/* Mobile-only "there's more below" cue (src/App.tsx, hero section). Fixed to the viewport
+   rather than the hero itself, since on small screens the hero comfortably exceeds one
+   screenful. Hidden by default here; responsive.css turns it on below the breakpoint where
+   the hero stops fitting a single glance and fades it out once the visitor starts scrolling. */
+.scroll-hint {
+  position: fixed;
+  bottom: 8px;
+  left: 50%;
+  z-index: 60;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: 1;
+  transition: opacity .35s ease;
+  transform: translateX(-50%);
+}
+
+.scroll-hint svg {
+  color: var(--signal);
+  animation: scroll-hint-bob 1.6s ease-in-out infinite;
+}
+
+html.has-scrolled .scroll-hint {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes scroll-hint-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
