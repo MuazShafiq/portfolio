@@ -1,0 +1,139 @@
+/* First-load boot animation (src/components/Preloader.tsx). Its window-dot colors come from
+   the shared .window-dots rule in hero.css (also borrowed by terminal-modal.css). Fully
+   neutralized by the prefers-reduced-motion override in responsive.css, imported after this. */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: var(--paper);
+  transition: opacity .5s cubic-bezier(.2, .8, .2, 1), transform .5s cubic-bezier(.2, .8, .2, 1);
+}
+
+.preloader::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 40%, #69e5ff14 0, transparent 34%),
+    radial-gradient(circle at 55% 62%, #aa89ff18 0, transparent 40%);
+}
+
+.preloader-exit {
+  opacity: 0;
+  transform: scale(1.02);
+  pointer-events: none;
+}
+
+html.is-preloading,
+html.is-preloading body {
+  overflow: hidden;
+}
+
+.preloader-window {
+  width: min(360px, 100%);
+  overflow: hidden;
+  background: #0d0f13;
+  border: 1px solid #3a3e45;
+  border-radius: 17px;
+  box-shadow: 0 35px 100px #000;
+  animation: preloader-in .5s cubic-bezier(.2, .8, .2, 1);
+}
+
+@keyframes preloader-in {
+  from { opacity: 0; transform: translateY(10px) scale(.97); }
+}
+
+.preloader-titlebar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 43px;
+  padding: 0 15px;
+  background: #15171c;
+  border-bottom: 1px solid #2b2e34;
+}
+
+.preloader-titlebar p {
+  margin: 0;
+  color: #74787e;
+  font-family: var(--mono);
+  font-size: 9px;
+  text-align: center;
+}
+
+.preloader-pct {
+  justify-self: end;
+  color: #74787e;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.preloader-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 28px 32px;
+}
+
+.preloader-mark {
+  color: var(--salt);
+  font-family: var(--mono);
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -.04em;
+  animation: preloader-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes preloader-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .55; }
+}
+
+.preloader-line {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #9ca0a5;
+  font-family: var(--mono);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.preloader-prompt {
+  color: var(--cyan);
+}
+
+.preloader-caret {
+  width: 6px;
+  height: 12px;
+  background: var(--signal);
+  animation: preloader-blink 1s steps(1) infinite;
+}
+
+@keyframes preloader-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.preloader-bar {
+  width: 100%;
+  height: 3px;
+  overflow: hidden;
+  background: #22252b;
+  border-radius: 3px;
+}
+
+.preloader-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--signal), var(--cyan));
+  border-radius: 3px;
+  transition: width .12s linear;
+}

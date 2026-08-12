@@ -29,6 +29,7 @@ import { MiniFaask } from "./components/MiniFaask";
 import { MiniFocusFlow } from "./components/MiniFocusFlow";
 import { MiniKoro } from "./components/MiniKoro";
 import { MiniSubscriptionFlow } from "./components/MiniSubscriptionFlow";
+import { Preloader } from "./components/Preloader";
 import { Reveal } from "./components/Reveal";
 import { TerminalModal } from "./components/TerminalModal";
 import { EMAIL, experience, GITHUB, LINKEDIN, skills } from "./data";
@@ -92,6 +93,7 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
 
   return (
     <>
+      <Preloader />
       <a className="skip-link" href="#main">Skip to content</a>
       <div className="ambient-glow" aria-hidden="true" />
 
@@ -401,7 +403,7 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
                 <div className="terminal-line"><span>$</span> muaz --status</div>
                 <p><i>✓</i> available_for_work</p>
                 <p><i>✓</i> available_for_freelance</p>
-                <p><i>✓</i> replies_within_48h</p>
+                <p><i>✓</i> replies_within_12h</p>
                 <a href={`mailto:${EMAIL}`}>send_message()<ChevronRight size={15} /></a>
               </div>
             </div>
