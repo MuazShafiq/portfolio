@@ -38,7 +38,10 @@
   .nav-shell { width: calc(100% - 24px); }
   .site-header { padding-top: 9px; }
   .nav-shell { min-height: 50px; }
-  .command-trigger { display: none; }
+  .command-trigger { min-height: 42px; justify-content: center; gap: 5px; padding: 0 8px; }
+  .command-trigger::before { display: none; }
+  .command-trigger-label { font-size: 9px; }
+  .command-trigger kbd { display: none; }
   .nav-contact { padding-inline: 11px; }
   .hero { gap: 22px; padding-top: 100px; padding-bottom: 36px; }
   .hero-copy { min-height: calc(100svh - 110px); }

@@ -104,5 +104,10 @@
 .contact-terminal p:nth-of-type(2) i { color: var(--cyan); }
 .contact-terminal p:nth-of-type(3) i { color: var(--orange); }
 .contact-terminal p i { margin-right: 7px; font-style: normal; }
-.contact-terminal a { display: flex; align-items: center; gap: 4px; margin-top: 20px; color: #d4c3ff; }
-
+.contact-terminal-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 20px; }
+.contact-terminal a,
+.contact-terminal button { display: flex; align-items: center; gap: 5px; color: #d4c3ff; }
+.contact-terminal button { padding: 0; background: none; border: 0; font: inherit; cursor: pointer; }
+.contact-terminal button { color: var(--cyan); }
+.contact-terminal a:hover,
+.contact-terminal button:hover { color: #fff; }

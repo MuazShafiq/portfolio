@@ -92,14 +92,51 @@
 }
 
 .command-trigger {
-  color: #999da2;
-  background: transparent;
-  border: 1px solid #292c32;
+  position: relative;
+  color: #d7d9dc;
+  background: linear-gradient(120deg, #171920, #101216);
+  border: 1px solid #3b3f48;
   cursor: pointer;
+  box-shadow: inset 0 0 0 1px #ffffff05;
+  transition: color .2s, border-color .2s, transform .2s, box-shadow .2s;
 }
 
-.command-trigger span {
+.command-trigger::before {
+  width: 6px;
+  height: 6px;
+  background: var(--cyan);
+  border-radius: 50%;
+  content: "";
+  box-shadow: 0 0 12px #69e5ff80;
+}
+
+.command-trigger:hover,
+.command-trigger:focus-visible {
+  color: #fff;
+  border-color: #69e5ff70;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 22px #69e5ff14, inset 0 0 0 1px #ffffff08;
+}
+
+.command-trigger-label {
+  font-size: 11px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.command-trigger kbd {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+  padding: 4px 6px;
+  color: #8d929a;
+  background: #090a0d;
+  border: 1px solid #30343b;
+  border-radius: 5px;
   font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
 }
 
 .nav-contact {
@@ -114,4 +151,3 @@
   transform: translateY(-2px);
   box-shadow: -7px 8px 26px #aa89ff22, 8px 9px 28px #69e5ff1c;
 }
-

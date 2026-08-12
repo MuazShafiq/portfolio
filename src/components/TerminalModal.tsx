@@ -9,8 +9,13 @@ export function TerminalModal({ onClose }: { onClose: () => void }) {
   const [value, setValue] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const windowRef = useRef<HTMLElement>(null);
+  const outputRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => inputRef.current?.focus(), []);
+
+  useEffect(() => {
+    outputRef.current?.scrollTo({ top: outputRef.current.scrollHeight, behavior: "smooth" });
+  }, [lines]);
 
   // Lock background scroll while the overlay is open.
   useEffect(() => {
@@ -43,12 +48,11 @@ export function TerminalModal({ onClose }: { onClose: () => void }) {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  const run = (event: SyntheticEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const command = value.trim().toLowerCase();
+  const executeCommand = (rawCommand: string) => {
+    const command = rawCommand.trim().toLowerCase();
     if (!command) return;
     const responses: Record<string, string> = {
-      help: "Commands: about · work · skills · contact · whoami · origin · saltpepper · play · clear · exit",
+      help: "Commands: about · work · skills · contact · whoami · origin · saltpepper · play · surprise · clear · exit",
       about: "Muaz builds across the stack, asks annoying questions, and refuses to let confusing systems stay confusing.",
       skills: "TypeScript, React, Next.js, Node.js, Express, Laravel, Python, SQL, AI/ML.",
       contact: `Open to the right engineering role, client project, or collaboration → ${EMAIL}`,
@@ -65,11 +69,15 @@ export function TerminalModal({ onClose }: { onClose: () => void }) {
       currently: "Building a portfolio that looks like a terminal but still remembers users are not shell scripts.",
       oldmuaz: "Still here. Slightly more production-tested, allegedly less funny.",
       hire: "Open to the right engineering role, client project, or collaboration.",
+      surprise: "Achievement unlocked: you found the deliberately over-engineered personality layer. Try ‘saltpepper’ next.",
     };
     let response = responses[command] ?? "Command not found. Strong initiative; questionable syntax.";
     if (command === "work") {
       response = "Navigating to selected work…";
-      window.setTimeout(() => document.querySelector("#work")?.scrollIntoView(), 300);
+      window.setTimeout(() => {
+        onClose();
+        window.requestAnimationFrame(() => document.querySelector("#work")?.scrollIntoView());
+      }, 350);
     }
     if (command === "clear") {
       setLines([]);
@@ -84,19 +92,44 @@ export function TerminalModal({ onClose }: { onClose: () => void }) {
     setValue("");
   };
 
+  const run = (event: SyntheticEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    executeCommand(value);
+  };
+
   return (
     <div className="command-overlay" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
-      <section ref={windowRef} className="command-window" role="dialog" aria-modal="true" aria-label="Interactive command palette">
+      <section
+        id="portfolio-terminal"
+        ref={windowRef}
+        className="command-window"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="terminal-title"
+        aria-describedby="terminal-description"
+      >
         <header>
           <div><span /><span /><span /></div>
           <p><TerminalSquare size={14} /> muaz@portfolio: ~</p>
           <button onClick={onClose} aria-label="Close terminal"><X size={18} /></button>
         </header>
-        <div className="command-body" onClick={() => inputRef.current?.focus()}>
-          {lines.map((line, index) => <p key={`${line}-${index}`} className={line.startsWith("visitor") ? "command-entry" : "command-response"}>{line}</p>)}
+        <h2 id="terminal-title" className="sr-only">Interactive portfolio terminal</h2>
+        <p id="terminal-description" className="sr-only">Type help to see available commands.</p>
+        <div ref={outputRef} className="command-body" onClick={() => inputRef.current?.focus()}>
+          <div className="command-output" role="status" aria-live="polite" aria-atomic="false">
+            {lines.map((line, index) => <p key={`${line}-${index}`} className={line.startsWith("visitor") ? "command-entry" : "command-response"}>{line}</p>)}
+          </div>
           <form onSubmit={run}>
             <label htmlFor="terminal-command">visitor@muaz:~$</label>
-            <input id="terminal-command" ref={inputRef} value={value} onChange={(event) => setValue(event.target.value)} autoComplete="off" spellCheck="false" />
+            <input
+              id="terminal-command"
+              ref={inputRef}
+              value={value}
+              onChange={(event) => setValue(event.target.value)}
+              autoComplete="off"
+              spellCheck="false"
+              aria-label="Terminal command"
+            />
           </form>
         </div>
       </section>

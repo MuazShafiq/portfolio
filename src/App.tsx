@@ -11,7 +11,6 @@ import {
   ChevronRight,
   Clapperboard,
   Code2,
-  Command,
   Download,
   Gamepad2,
   GitBranch,
@@ -25,7 +24,7 @@ import {
   Sparkles,
   TerminalSquare,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { MiniFaask } from "./components/MiniFaask";
 import { MiniFocusFlow } from "./components/MiniFocusFlow";
 import { MiniKoro } from "./components/MiniKoro";
@@ -71,14 +70,28 @@ type AppProps = {
 
 function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
   const [terminalOpen, setTerminalOpen] = useState(false);
+  const terminalReturnFocusRef = useRef<HTMLElement | null>(null);
+
+  const openTerminal = useCallback(() => {
+    terminalReturnFocusRef.current = document.activeElement instanceof HTMLElement
+      ? document.activeElement
+      : null;
+    setTerminalOpen(true);
+  }, []);
+
+  const closeTerminal = useCallback(() => {
+    setTerminalOpen(false);
+    window.requestAnimationFrame(() => terminalReturnFocusRef.current?.focus());
+  }, []);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
-        setTerminalOpen((open) => !open);
+        if (terminalOpen) closeTerminal();
+        else openTerminal();
       }
-      if (event.key === "Escape") setTerminalOpen(false);
+      if (event.key === "Escape" && terminalOpen) closeTerminal();
     };
     const onPointerMove = (event: PointerEvent) => {
       document.documentElement.style.setProperty("--mouse-x", `${event.clientX}px`);
@@ -90,7 +103,7 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("pointermove", onPointerMove);
     };
-  }, []);
+  }, [closeTerminal, openTerminal, terminalOpen]);
 
   // Drives the mobile "scroll for more" hint (hidden on desktop; see .scroll-hint in hero.css) —
   // fades it out as soon as the visitor actually starts scrolling.
@@ -118,8 +131,18 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
             <a href="#about">About</a>
           </div>
           <div className="nav-actions">
-            <button className="command-trigger" onClick={() => setTerminalOpen(true)} aria-label="Open interactive terminal">
-              <Command size={14} /> <span>Ctrl K</span>
+            <button
+              className="command-trigger"
+              onClick={openTerminal}
+              aria-label="Open interactive portfolio terminal"
+              aria-haspopup="dialog"
+              aria-expanded={terminalOpen}
+              aria-controls="portfolio-terminal"
+              aria-keyshortcuts="Control+K Meta+K"
+            >
+              <TerminalSquare size={15} />
+              <span className="command-trigger-label">Terminal</span>
+              <kbd aria-label="Command or Control plus K">⌘ Ctrl + K</kbd>
             </button>
             <a className="nav-contact" href={`mailto:${EMAIL}`}>Let’s talk <ArrowUpRight size={15} /></a>
           </div>
@@ -421,7 +444,10 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
                 <p><i>✓</i> available_for_work</p>
                 <p><i>✓</i> available_for_freelance</p>
                 <p><i>✓</i> replies_within_12h</p>
-                <a href={`mailto:${EMAIL}`}>send_message()<ChevronRight size={15} /></a>
+                <div className="contact-terminal-actions">
+                  <button onClick={openTerminal}><TerminalSquare size={14} /> open_terminal()</button>
+                  <a href={`mailto:${EMAIL}`}>send_message()<ChevronRight size={15} /></a>
+                </div>
               </div>
             </div>
           </Reveal>
@@ -437,10 +463,10 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
             <a href={`mailto:${EMAIL}`}><Mail size={17} /> Email</a>
           </div>
         </div>
-        <div className="footer-bottom"><span>© {new Date().getFullYear()} MUAZ SHAFIQ</span><button onClick={() => setTerminalOpen(true)}><TerminalSquare size={14} /> TRY THE TERMINAL</button><a href="#top">BACK TO TOP ↑</a></div>
+        <div className="footer-bottom"><span>© {new Date().getFullYear()} MUAZ SHAFIQ</span><button onClick={openTerminal}><TerminalSquare size={14} /> OPEN INTERACTIVE TERMINAL</button><a href="#top">BACK TO TOP ↑</a></div>
       </footer>
 
-      {terminalOpen && <TerminalModal onClose={() => setTerminalOpen(false)} />}
+      {terminalOpen && <TerminalModal onClose={closeTerminal} />}
     </>
   );
 }
