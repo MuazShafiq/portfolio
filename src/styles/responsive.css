@@ -104,6 +104,16 @@
   .footer-bottom { align-items: flex-start; flex-direction: column; gap: 16px; }
 }
 
+/* Installed PWA only (site.webmanifest sets display: "standalone"). There's no browser address
+   bar to reduce the viewport here, so 100svh above resolves taller than in a mobile browser tab
+   and the hero copy — sized to roughly one screenful but never made an explicit flex/centered
+   box, since that was tuned to look right against a real browser tab's shorter viewport — ends
+   up stranded near the top with dead space below it. Centering only in this mode fixes that
+   without touching the browser-tab layout, which is already correct. */
+@media (max-width: 580px) and (display-mode: standalone) {
+  .hero-copy { display: flex; flex-direction: column; justify-content: center; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
