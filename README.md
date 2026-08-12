@@ -1,54 +1,84 @@
 # Portfolio
 
-**Live site:** [muaz-shafiq-portfolio.vercel.app](https://muaz-shafiq-portfolio.vercel.app/)
+A terminal-inspired product engineering portfolio focused on thoughtful
+full-stack products, AI experiences, and reliable SaaS systems.
 
-A static, responsive software engineering portfolio combining a playful
-near-future interface with developer-terminal details. It presents selected
-products, professional experience, technical capabilities, and a few personal
-Easter eggs without getting in the way of recruiters and clients.
+I build software across the stack—from interfaces people enjoy using to the
+APIs, data models, search systems, and intelligent features behind them. This
+portfolio brings together independent products and professional engineering
+work, with an emphasis on solving real problems clearly and shipping complete
+experiences.
+
+## Explore
+
+- [View the live portfolio](https://muaz-shafiq-portfolio.vercel.app/)
+- [Email](mailto:muaz.shafiq18@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/muaz-shafiq/)
+- [GitHub](https://github.com/MuazShafiq)
 
 ## Featured work
 
-- **Faask:** Swipe-first fashion discovery with adaptive taste ranking, hybrid search, and 13,700+ products across 10+ Pakistani retailers
-- **Koro.ai:** Voice-first tutoring with Llama-powered lessons, managed resources, and Aura/MeloTTS speech
-- **FocusFlow:** AI-assisted adaptive planning with constraint-aware, energy-aware calendar generation
-- **SubscriptionFlow:** Public-safe highlights from production subscription software
+### [Faask](https://faask.vercel.app/)
 
-## Stack
+A swipe-first fashion discovery app that learns personal taste and turns it
+into sharper recommendations. It combines adaptive taste ranking, hybrid
+semantic and full-text search, and a normalized catalogue of more than 13,700
+active products across 10+ Pakistani retailers.
 
-- Astro static rendering for complete initial HTML and SEO
-- React and TypeScript for interactive behavior
-- Handcrafted CSS and lightweight React interactions
-- Lucide icons
-- Self-hosted Manrope and DM Mono fonts
-- Static assets only: no database, server functions, paid APIs, or analytics
+[Live app](https://faask.vercel.app/) · [Source code](https://github.com/MuazShafiq/faask)
 
-## Run locally
+### [Koro.ai](https://koro-ai-lime.vercel.app/)
+
+A voice-first AI tutor with adaptive lessons, persistent learning data,
+progress tracking, managed educational resources, and Llama-powered learning
+experiences with Aura and MeloTTS speech.
+
+[Live app](https://koro-ai-lime.vercel.app/) · [Source code](https://github.com/MuazShafiq/koro.ai)
+
+### [FocusFlow](https://focusflow-web-azure.vercel.app/)
+
+An AI-assisted planner that turns tasks, deadlines, fixed commitments, energy
+patterns, and lifestyle goals into realistic 7- or 14-day schedules.
+
+[Live app](https://focusflow-web-azure.vercel.app/) · [Source code](https://github.com/MuazShafiq/focusflow)
+
+### [SubscriptionFlow](https://www.subscriptionflow.com/)
+
+Product engineering across a modern Next.js frontend and the Laravel/MySQL
+systems behind a YC-backed subscription management platform, including
+dashboards and end-to-end subscription workflows.
+
+[Visit the company](https://www.subscriptionflow.com/)
+
+## Engineering focus
+
+- Full-stack product development across React, Next.js, Node.js, Express,
+  Laravel, Python, SQL, and modern data platforms
+- AI-powered product experiences, semantic search, recommendations, voice, and
+  scheduling systems
+- Clear, responsive interfaces backed by practical product thinking
+- Production SaaS workflows that connect frontend experiences with dependable
+  backend systems
+
+## About this portfolio
+
+The site is built with Astro, React, and handcrafted CSS. It uses static
+rendering for fast delivery and complete initial HTML, with accessible,
+lightweight interactions and a responsive terminal experience across desktop
+and mobile screens.
+
+## Local development
 
 ```powershell
 npm install
 npm run dev
 ```
 
-## Verify
+Validate a production build with:
 
 ```powershell
 npm run lint
 npm run build
 ```
 
-## Deployment
-
-The production site is available at
-[muaz-shafiq-portfolio.vercel.app](https://muaz-shafiq-portfolio.vercel.app/).
-It runs on Vercel's Hobby tier and is connected to this repository for automatic
-deployments from `main`.
-
-To publish local updates:
-
-```powershell
-vercel deploy --prod --archive=tgz
-```
-
-No environment variables are required. The contact links use `mailto:` and the
-résumé is served as a static download, so there are no ongoing service costs.
+Deployments are connected to `main` and hosted on Vercel.
