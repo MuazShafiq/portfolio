@@ -51,6 +51,7 @@ The codebase is already split by concern (components, data, per-section styles),
 - CSS files under `src/styles/` aren't symbol-structured — `Grep` for the selector/class name first (check the neighboring files' top-of-file comments too, since a few rules are intentionally shared across two section files) rather than reading a whole stylesheet file.
 - If a CSS rule needs splitting out of a multi-selector group that spans two files, verify the individual selectors don't overlap/conflict in specificity before separating them — the existing split relied on never reordering rules relative to each other, only cutting at rule boundaries.
 - Never `Read`, `Grep`, or `Glob` into `node_modules/`, `dist/`, `.astro/`, or `.vercel/` — these are generated/vendored and add nothing (they're already excluded from lint/build).
+- Before starting a development server, check whether this project's server is already running and reuse it when available. Never stop an existing portfolio development server unless the user explicitly asks you to stop it, including during final cleanup.
 
 ## Recommended tooling
 

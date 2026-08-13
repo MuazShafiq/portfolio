@@ -1,4 +1,4 @@
-import { CalendarRange, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export function MiniFocusFlow() {
   const blocks = [
@@ -11,7 +11,7 @@ export function MiniFocusFlow() {
   return (
     <div className="mini-ui focus-ui" aria-hidden="true">
       <div className="focus-toolbar">
-        <div className="focus-logo"><CalendarRange size={14} /> focusflow</div>
+        <div className="focus-logo"><img src="/project-icons/focusflow.png" alt="" width="17" height="17" /></div>
         <span>Aug 03 — Aug 09</span>
         <div className="focus-action"><Sparkles size={11} /> Rebalance</div>
       </div>

@@ -4,7 +4,7 @@ export function MiniSubscriptionFlow() {
   return (
     <div className="mini-ui sf-dashboard" aria-label="A public-safe recreation of the current SubscriptionFlow Next.js dashboard">
       <aside className="sf-preview-sidebar">
-        <div className="sf-preview-brand"><span>SF</span><b>SubscriptionFlow</b></div>
+        <div className="sf-preview-brand"><span><img src="/project-icons/subscriptionflow.svg" alt="" width="18" height="18" /></span></div>
         <nav>
           {navigation.map((item, index) => (
             <span key={item} className={index === 0 ? "active" : ""}>

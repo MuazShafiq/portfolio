@@ -38,6 +38,10 @@ user explicitly changes that requirement.
 - For visual, layout, interaction, or animation work, validate the running page
   at relevant desktop and mobile widths. A successful build alone is not visual
   verification.
+- Before starting a development server, check whether this project's server is
+  already running and reuse it when available. Never stop an existing portfolio
+  development server unless the user explicitly asks you to stop it, including
+  during final cleanup.
 - Do not describe local changes as live. Publishing requires an intentional
   commit and push, confirmation that Vercel completed the deployment, and a
   check of the production result.

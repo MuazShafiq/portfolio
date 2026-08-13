@@ -4,7 +4,7 @@ export function MiniFaask() {
   return (
     <div className="mini-ui faask-ui" aria-hidden="true">
       <div className="faask-topbar">
-        <strong>faask<span>.</span></strong>
+        <strong><img src="/project-icons/faask.svg" alt="" width="18" height="18" /></strong>
         <small>92% MATCH</small>
       </div>
       <div className="faask-deck">

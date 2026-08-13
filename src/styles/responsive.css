@@ -71,16 +71,27 @@
   .project-visual { min-height: 400px; }
   .mini-ui { width: 92%; height: 300px; transform: none; }
   .faask-ui { width: min(76%, 285px); height: 350px; }
-  .koro-ui { grid-template-columns: 56px 1fr; }
-  .mini-sidebar { padding-inline: 8px; }
-  .mini-nav { width: 35px; }
-  .lesson-orb { margin-top: 35px; }
+  .koro-ui { grid-template-columns: 42px 1fr; }
+  .koro-session-sidebar { padding-inline: 6px; }
+  .koro-session-sidebar nav span { width: 27px; height: 27px; }
+  .koro-session-main { grid-template-columns: minmax(0, 1fr) 112px; }
+  .koro-session-header { padding-inline: 7px; }
+  .koro-session-header > div { gap: 4px; }
+  .koro-session-header > p > small { display: none; }
+  .koro-session-header > p > b { font-size: 4px; }
+  .koro-blackboard { margin: 7px; }
+  .koro-board-content { gap: 6px; padding: 7px; }
+  .koro-board-content article { padding: 7px; }
+  .koro-audio { padding: 7px; }
+  .koro-waveform { gap: 2px; }
+  .koro-chat { gap: 5px; padding: 7px 6px; }
+  .koro-chat article p { padding: 5px; }
+  .koro-chat-input { margin-inline: 6px; }
   .focus-ui { height: 320px; padding-inline: 9px; }
   .calendar-demo { grid-template-columns: 26px repeat(5, 1fr); }
   .calendar-labels { grid-template-columns: 26px repeat(5, 1fr); }
   .sf-dashboard { grid-template-columns: 84px 1fr; width: 96%; height: 340px; transform: none; }
   .sf-preview-sidebar { padding-inline: 7px; }
-  .sf-preview-brand b { display: none; }
   .sf-preview-main { padding: 17px 11px; }
   .sf-status-grid article { gap: 7px; padding: 7px; }
   .sf-donut { width: 43px; height: 43px; }

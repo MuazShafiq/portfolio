@@ -232,7 +232,7 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
               <div className="project-meta"><span>2026 — NOW</span><span>FASHION / AI</span></div>
               <div className="project-number">01</div>
               <div>
-                <div className="project-title-line"><span className="project-icon faask-icon"><Heart size={20} /></span><h3>Faask</h3></div>
+                <div className="project-title-line"><span className="project-icon faask-icon"><img src="/project-icons/faask.svg" alt="" width="39" height="39" /></span><h3>Faask</h3></div>
                 <p className="project-lede">A swipe-first fashion discovery app that learns personal taste and turns it into sharper recommendations.</p>
                 <ul className="project-highlights">
                   <li><Check size={14} /> Adaptive recommendations from onboarding preferences and swipe-learned taste embeddings</li>
@@ -259,7 +259,7 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
               <div className="project-meta"><span>2025 — NOW</span><span>AI / EDTECH</span></div>
               <div className="project-number">02</div>
               <div>
-                <div className="project-title-line"><span className="project-icon koro-icon"><Mic2 size={20} /></span><h3>Koro.ai</h3></div>
+                <div className="project-title-line"><span className="project-icon koro-icon"><img src="/project-icons/koro.ico" alt="" width="39" height="39" /></span><h3>Koro.ai</h3></div>
                 <p className="project-lede">A production-ready, voice-first AI tutor with adaptive lessons, persistent learning data, and managed educational resources.</p>
                 <ul className="project-highlights">
                   <li><Check size={14} /> Supabase-backed accounts, preferences, analytics, and progress</li>
@@ -274,7 +274,7 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
               </div>
             </div>
             <div className="project-visual koro-visual">
-              <div className="visual-label"><i /> VOICE SESSION ACTIVE</div>
+              <div className="visual-label"><i /> AI STUDY SESSION</div>
               <MiniKoro />
               <div className="floating-chip chip-top"><BrainCircuit size={13} /> Adaptive</div>
               <div className="floating-chip chip-bottom"><Mic2 size={13} /> Voice-first</div>
@@ -286,7 +286,7 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
               <div className="project-meta"><span>2024 — NOW</span><span>PRODUCTIVITY / ML</span></div>
               <div className="project-number">03</div>
               <div>
-                <div className="project-title-line"><span className="project-icon focus-icon"><CalendarRange size={20} /></span><h3>FocusFlow</h3></div>
+                <div className="project-title-line"><span className="project-icon focus-icon"><img src="/project-icons/focusflow.png" alt="" width="39" height="39" /></span><h3>FocusFlow</h3></div>
                 <p className="project-lede">An AI-assisted planner that turns tasks, deadlines, commitments, energy patterns, and lifestyle goals into a realistic calendar.</p>
                 <ul className="project-highlights">
                   <li><Check size={14} /> Automatic 7 or 14-day plans built around deadlines and fixed commitments</li>
@@ -313,7 +313,7 @@ function App({ portraitSrc, portraitWidth, portraitHeight }: AppProps) {
               <div className="project-meta"><span>2024 — NOW</span><span>PROFESSIONAL WORK</span></div>
               <div className="project-number">04</div>
               <div>
-                <div className="project-title-line"><span className="project-icon sf-icon"><BriefcaseBusiness size={20} /></span><h3>SubscriptionFlow</h3></div>
+                <div className="project-title-line"><span className="project-icon sf-icon"><img src="/project-icons/subscriptionflow.svg" alt="" width="39" height="39" /></span><h3>SubscriptionFlow</h3></div>
                 <p className="project-lede">Product engineering across a modern Next.js frontend and the systems behind a YC-backed subscription platform.</p>
                 <ul className="project-highlights">
                   <li><Check size={14} /> Modern dashboards and end-to-end subscription workflows</li>
