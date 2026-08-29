@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 
 const expectedSha256 = "569aaadc4b865e8bc74463ed879cbe60fa34f4a1628afd1b7b8e534c0d13688d";
 const expectedSize = 74991;
-const parts = ["part00", "part01", "part02", "part03", "part04"];
+const parts = ["part00", "part01", "part02", "part03", "part04a", "part04b"];
 
 const encoded = parts
   .map((part) => readFileSync(new URL(`../.resume-fix/${part}`, import.meta.url), "utf8"))
