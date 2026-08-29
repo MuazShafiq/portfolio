@@ -1,0 +1,32 @@
+name: Fix exact resume
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".resume-fix/**"
+      - ".github/workflows/fix-exact-resume.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  replace-resume:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Rebuild exact uploaded resume
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .resume-fix/part00 .resume-fix/part01 .resume-fix/part02 .resume-fix/part03 .resume-fix/part04 \
+            | base64 -d | gzip -d > public/Muaz-Shafiq-Resume.pdf
+          echo "569aaadc4b865e8bc74463ed879cbe60fa34f4a1628afd1b7b8e534c0d13688d  public/Muaz-Shafiq-Resume.pdf" | sha256sum -c -
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/Muaz-Shafiq-Resume.pdf
+          git diff --cached --quiet && exit 0
+          git commit -m "Use exact uploaded resume"
+          git push
